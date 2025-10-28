@@ -1,56 +1,37 @@
 [
   {
     "id": "exp-1",
-    "role": "Machine Learning Engineer",
-    "company": "Tech Innovations Ltd",
-    "companyUrl": "https://techinnovations.com",
+    "role": "Full Stack Developer (Freelance)",
+    "company": "Playlit",
+    "companyUrl": "https://playlit.com",
     "location": "Remote",
-    "startDate": "2023-06",
+    "startDate": "2025-01",
     "endDate": "Present",
     "current": true,
     "description": [
-      "Designed and deployed 15+ machine learning models for production environments, achieving 95%+ accuracy across various use cases",
-      "Built end-to-end MLOps pipelines using Docker, Kubernetes, and MLflow, reducing model deployment time by 70%",
-      "Implemented automated model monitoring and retraining systems, improving model performance consistency by 40%",
-      "Led cross-functional team of 5 engineers in developing computer vision solutions for real-time object detection",
-      "Optimized deep learning models for edge deployment, reducing inference latency from 200ms to 45ms"
+      "Designed a data-centric music platform with authentication, artist analytics, and structured content uploads.",
+      "Developed role-based dashboards to support internal performance monitoring and management.",
+      "Designed and managed a waitlist system that captures user interaction metrics from more than 400+ users.",
+      "Architected scalable back-end infrastructure for reliable data handling and user behavior tracking."
     ],
-    "technologies": ["Python", "TensorFlow", "PyTorch", "Docker", "Kubernetes", "AWS", "MLflow", "FastAPI"]
+    "technologies": ["Next.js", "Neon DB", "Clerk Auth", "Cloudinary"]
   },
   {
     "id": "exp-2",
-    "role": "AI Research Intern",
-    "company": "AI Research Lab",
-    "companyUrl": "https://airesearchlab.com",
-    "location": "Hybrid",
-    "startDate": "2022-06",
-    "endDate": "2023-05",
+    "role": "SDE Intern",
+    "company": "Titan Company Ltd",
+    "companyUrl": "https://www.titan.co.in",
+    "location": "Bengaluru",
+    "startDate": "2024-06",
+    "endDate": "2024-07",
     "current": false,
     "description": [
-      "Conducted research on transformer architectures for NLP tasks, achieving state-of-the-art results on benchmark datasets",
-      "Developed novel data augmentation techniques that improved model generalization by 25%",
-      "Published 2 research papers on deep learning optimization techniques in peer-reviewed conferences",
-      "Built scalable data preprocessing pipelines processing 10M+ documents daily using Apache Spark",
-      "Collaborated with research team on developing efficient training strategies for large language models"
+      "Improved SQL query performance and reporting precision for Tanishq Jewelry's data systems by identifying and resolving bottlenecks.",
+      "Built a Python-based store locator data pipeline, replacing time-consuming manual lookup with automated data extraction.",
+      "Authored Business Requirements and Technical Specification Documents for a limit automation initiative, aligning output with analyst expectations.",
+      "Collaborated with business analysts to document workflows, schema mappings, and process automations for technical reporting.",
+      "Contributed to internal ML research on Vision Transformers and CNNs, focusing on scalable inference strategies for analytics solutions."
     ],
-    "technologies": ["Python", "PyTorch", "Transformers", "BERT", "GPT", "Apache Spark", "NumPy", "Pandas"]
-  },
-  {
-    "id": "exp-3",
-    "role": "Data Science Intern",
-    "company": "Analytics Corp",
-    "companyUrl": "https://analyticscorp.com",
-    "location": "On-site",
-    "startDate": "2021-12",
-    "endDate": "2022-05",
-    "current": false,
-    "description": [
-      "Developed predictive models for customer churn reduction, achieving 88% accuracy and saving $2M annually",
-      "Created automated feature engineering pipelines reducing manual data processing time by 60%",
-      "Built interactive dashboards using Tableau and Power BI for real-time business intelligence",
-      "Performed A/B testing and statistical analysis to optimize product recommendations",
-      "Collaborated with product teams to integrate ML models into existing business workflows"
-    ],
-    "technologies": ["Python", "Scikit-learn", "SQL", "Tableau", "Power BI", "Pandas", "NumPy"]
+    "technologies": ["Python", "SQL", "Vision Transformers", "CNN", "Data Pipeline", "ML Research"]
   }
 ]
