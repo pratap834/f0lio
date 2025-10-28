@@ -22,8 +22,8 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       <div className="relative h-full rounded-2xl bg-secondary border border-[rgba(255,255,255,0.05)] overflow-hidden transition-all duration-300 hover:border-accent/30 hover:shadow-[0_12px_40px_rgba(0,173,181,0.15)]">
         {/* Thumbnail */}
-        <div className="relative h-48 bg-gradient-to-br from-accent/20 to-primary overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="relative h-48 bg-black overflow-hidden">
+          <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-20 h-20 rounded-lg bg-accent/20 border-2 border-accent/40 flex items-center justify-center">
               <span className="text-3xl font-bold text-accent">P</span>

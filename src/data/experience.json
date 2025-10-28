@@ -33,5 +33,51 @@
       "Contributed to internal ML research on Vision Transformers and CNNs, focusing on scalable inference strategies for analytics solutions."
     ],
     "technologies": ["Python", "SQL", "Vision Transformers", "CNN", "Data Pipeline", "ML Research"]
+  },
+  {
+    "id": "exp-3",
+    "role": "Technical Team Lead",
+    "company": "NULL Chapter Vijayawada",
+    "companyUrl": "",
+    "location": "Vijayawada",
+    "startDate": "2023-01",
+    "endDate": "Present",
+    "current": true,
+    "description": [
+      "Designed Capture the Flag (CTF) problems focused on reverse engineering and data handling for technical competitions.",
+      "Facilitated workshops on data security, analytics, and vulnerability assessment.",
+      "Mentored members in structured problem-solving and investigative analysis techniques."
+    ],
+    "technologies": ["Cybersecurity", "CTF", "Reverse Engineering", "Data Security"]
+  },
+  {
+    "id": "exp-4",
+    "role": "Tech Python Co-Lead",
+    "company": "NextGen Cloud",
+    "companyUrl": "",
+    "location": "",
+    "startDate": "2023-01",
+    "endDate": "2024-12",
+    "current": false,
+    "description": [
+      "Built an e-commerce system emphasizing transactional data flow and user data management.",
+      "Provided hands-on sessions on back-end analytics, performance debugging, and query optimization."
+    ],
+    "technologies": ["Python", "E-commerce", "Backend", "Data Management", "Analytics"]
+  },
+  {
+    "id": "exp-5",
+    "role": "Content Team Member",
+    "company": "Machine Learning Club",
+    "companyUrl": "",
+    "location": "",
+    "startDate": "2022-01",
+    "endDate": "2023-12",
+    "current": false,
+    "description": [
+      "Participated in data preprocessing, model evaluation, and reporting accuracy for ML-based student projects.",
+      "Organized peer review sessions to improve analytical approaches and data storytelling."
+    ],
+    "technologies": ["Machine Learning", "Data Preprocessing", "Model Evaluation", "Python"]
   }
 ]
