@@ -32,20 +32,6 @@ export default function HeroOverlay() {
           <br />
           Building intelligent systems and deploying production-ready ML solutions
         </motion.p>
-
-        <motion.div
-          className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <Button variant="primary" href="#projects">
-            View Projects
-          </Button>
-          <Button variant="ghost" href="/resume.pdf">
-            Download CV
-          </Button>
-        </motion.div>
       </motion.div>
     </div>
   );
