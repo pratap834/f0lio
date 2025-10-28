@@ -5,18 +5,21 @@ import { useState, useEffect } from 'react';
 
 export default function ScrollIndicator() {
   const [isVisible, setIsVisible] = useState(true);
+  const [isAtBottom, setIsAtBottom] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Calculate if user is near the bottom of the page
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       
-      // Hide when within 100px of the bottom
+      // Check if near the bottom (within 100px)
       const nearBottom = scrollTop + windowHeight >= documentHeight - 100;
       
-      setIsVisible(!nearBottom);
+      setIsAtBottom(nearBottom);
+      
+      // Always keep visible
+      setIsVisible(true);
     };
 
     // Check on mount
@@ -27,10 +30,19 @@ export default function ScrollIndicator() {
   }, []);
 
   const handleClick = () => {
-    window.scrollBy({
-      top: window.innerHeight,
-      behavior: 'smooth'
-    });
+    if (isAtBottom) {
+      // Scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      // Scroll down one viewport
+      window.scrollBy({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
   };
 
   if (!isVisible) return null;
@@ -46,11 +58,17 @@ export default function ScrollIndicator() {
       <button
         onClick={handleClick}
         className="inline-block text-text-secondary hover:text-accent transition-colors cursor-pointer"
-        aria-label="Scroll down"
+        aria-label={isAtBottom ? "Scroll to top" : "Scroll down"}
       >
         <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
+          animate={{ 
+            y: [0, 8, 0],
+            rotate: isAtBottom ? 180 : 0
+          }}
+          transition={{ 
+            y: { duration: 1.5, repeat: Infinity },
+            rotate: { duration: 0.3 }
+          }}
         >
           <svg
             width="32"
