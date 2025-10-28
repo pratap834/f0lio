@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import skillsData from '@/data/skills.json';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import BangAnimation from '@/components/ui/BangAnimation';
 
 export default function AboutPage() {
   const coreSkills = ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Deep Learning', 'NLP', 'Computer Vision', 'MLOps'];
@@ -192,6 +193,7 @@ export default function AboutPage() {
         </motion.div>
       </div>
       <ScrollIndicator />
+      <BangAnimation />
     </div>
   );
 }
