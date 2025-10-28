@@ -35,6 +35,21 @@
     "technologies": ["Python", "SQL", "Vision Transformers", "CNN", "Data Pipeline", "ML Research"]
   },
   {
+    "id": "exp-4",
+    "role": "Tech Python Co-Lead",
+    "company": "NextGen Cloud",
+    "companyUrl": "",
+    "location": "",
+    "startDate": "2023-01",
+    "endDate": "2024-12",
+    "current": false,
+    "description": [
+      "Built an e-commerce system emphasizing transactional data flow and user data management.",
+      "Provided hands-on sessions on back-end analytics, performance debugging, and query optimization."
+    ],
+    "technologies": ["Python", "E-commerce", "Backend", "Data Management", "Analytics"]
+  },
+  {
     "id": "exp-3",
     "role": "Technical Team Lead",
     "company": "NULL Chapter Vijayawada",
@@ -49,21 +64,6 @@
       "Mentored members in structured problem-solving and investigative analysis techniques."
     ],
     "technologies": ["Cybersecurity", "CTF", "Reverse Engineering", "Data Security"]
-  },
-  {
-    "id": "exp-4",
-    "role": "Tech Python Co-Lead",
-    "company": "NextGen Cloud",
-    "companyUrl": "",
-    "location": "",
-    "startDate": "2023-01",
-    "endDate": "2024-12",
-    "current": false,
-    "description": [
-      "Built an e-commerce system emphasizing transactional data flow and user data management.",
-      "Provided hands-on sessions on back-end analytics, performance debugging, and query optimization."
-    ],
-    "technologies": ["Python", "E-commerce", "Backend", "Data Management", "Analytics"]
   },
   {
     "id": "exp-5",
