@@ -181,7 +181,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## 📧 Contact
 
-Prathamesh - [your.email@example.com](mailto:your.email@example.com)
+Prat. - [your.email@example.com](mailto:your.email@example.com)
 
 Portfolio: [https://yourportfolio.vercel.app](https://yourportfolio.vercel.app)
 
