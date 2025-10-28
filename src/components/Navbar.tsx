@@ -82,13 +82,13 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <motion.button
-                className="px-5 py-2 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <motion.span
+                className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
+                whileHover={{ y: -2 }}
               >
                 Resume
-              </motion.button>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
+              </motion.span>
             </Link>
           </div>
 
@@ -138,10 +138,14 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: NAV_LINKS.length * 0.1 }}
               >
-                <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <button className="px-8 py-3 rounded-full border-2 border-accent text-accent text-xl hover:bg-accent hover:text-black transition-all duration-300">
-                    Resume
-                  </button>
+                <Link 
+                  href="/resume.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
+                >
+                  Resume
                 </Link>
               </motion.div>
             </div>
