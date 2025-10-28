@@ -15,9 +15,9 @@ export default function ContactCTA() {
           transition={{ duration: 0.6 }}
           className="max-w-4xl mx-auto text-center"
         >
-          <div className="p-12 rounded-3xl bg-gradient-to-br from-secondary to-primary border border-accent/20 relative overflow-hidden">
+          <div className="p-12 rounded-3xl bg-secondary/50 backdrop-blur-sm border border-accent/10 relative overflow-hidden">
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
+            <div className="absolute inset-0 bg-accent/5" />
             
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">

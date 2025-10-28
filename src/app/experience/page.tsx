@@ -63,7 +63,7 @@ export default function ExperiencePage() {
                 </div>
 
                 {/* Experience Card */}
-                <div className="flex-1 p-8 rounded-2xl bg-secondary border border-[rgba(255,255,255,0.05)] hover:border-accent/30 transition-all duration-300 group hover:shadow-[0_12px_40px_rgba(0,173,181,0.1)]">
+                <div className="flex-1 p-8 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all duration-300 group hover:shadow-[0_12px_40px_rgba(0,173,181,0.1)]">
                   {/* Header */}
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>

@@ -36,7 +36,7 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="p-8 rounded-2xl bg-secondary border border-[rgba(255,255,255,0.05)] hover:border-accent/30 transition-all duration-300 group"
+              className="p-8 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all duration-300 group"
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div>

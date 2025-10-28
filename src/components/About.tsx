@@ -72,7 +72,7 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: 0.1 * index }}
-                className="p-4 rounded-xl bg-secondary border border-[rgba(255,255,255,0.05)] hover:border-accent/30 transition-all group"
+                className="p-4 rounded-xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all group"
                 whileHover={{ y: -4 }}
               >
                 <div className="text-center">
