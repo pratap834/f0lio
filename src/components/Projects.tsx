@@ -1,14 +1,47 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import projectsData from '@/data/projects.json';
 import ProjectCard from './ProjectCard';
 import { Project } from '@/types';
 
 export default function Projects() {
-  const featuredProjects = projectsData.filter((p: Project) => p.featured).slice(0, 3);
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        const response = await fetch('/api/projects');
+        if (response.ok) {
+          const data = await response.json();
+          setProjects(data.projects);
+        }
+      } catch (error) {
+        console.error('Error loading projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProjects();
+  }, []);
+
+  const featuredProjects = projects.filter((p: Project) => p.featured).slice(0, 3);
+
+  if (loading) {
+    return (
+      <section id="projects" className="py-20 bg-secondary">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="inline-block w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin" />
+            <p className="text-text-secondary mt-4">Loading projects...</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="projects" className="py-20 bg-secondary">
@@ -24,7 +57,7 @@ export default function Projects() {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Check out some of my recent work
+            Check out some of my recent work (Auto-synced from GitHub)
           </p>
         </motion.div>
 

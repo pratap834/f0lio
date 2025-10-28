@@ -3,6 +3,7 @@ import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import ContactCTA from '@/components/ContactCTA';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Projects />
       <Experience />
       <ContactCTA />
+      <ScrollIndicator />
     </>
   );
 }

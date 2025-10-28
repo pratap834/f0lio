@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import experienceData from '@/data/experience.json';
 import { Experience } from '@/types';
 import { formatDate } from '@/lib/helpers';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function ExperiencePage() {
   return (
@@ -129,6 +130,7 @@ export default function ExperiencePage() {
           })}
         </div>
       </div>
+      <ScrollIndicator />
     </div>
   );
 }

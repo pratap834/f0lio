@@ -1,19 +1,63 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import projectsData from '@/data/projects.json';
 import ProjectCard from '@/components/ProjectCard';
 import { Project } from '@/types';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState<string>('all');
-  
-  const categories = ['all', ...Array.from(new Set(projectsData.map((p: Project) => p.category).filter(Boolean)))];
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState<string[]>(['all']);
+
+  useEffect(() => {
+    async function loadProjects() {
+      try {
+        const response = await fetch('/api/projects');
+        if (response.ok) {
+          const data = await response.json();
+          setProjects(data.projects);
+          
+          // Extract unique categories
+          const uniqueCategories = ['all', ...Array.from(new Set(
+            data.projects.map((p: Project) => p.category).filter(Boolean)
+          ))] as string[];
+          setCategories(uniqueCategories);
+        }
+      } catch (error) {
+        console.error('Error loading projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProjects();
+  }, []);
   
   const filteredProjects = filter === 'all' 
-    ? projectsData 
-    : projectsData.filter((p: Project) => p.category === filter);
+    ? projects 
+    : projects.filter((p: Project) => p.category === filter);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen pt-24 pb-16 relative">
+        <div className="fixed inset-0 -z-10 bg-gradient-to-b from-primary via-[#111111] to-primary">
+          <div className="absolute inset-0 opacity-30">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full filter blur-[120px] animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full filter blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
+          </div>
+        </div>
+        <div className="container mx-auto px-6">
+          <div className="text-center py-20">
+            <div className="inline-block w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin mb-4" />
+            <p className="text-text-secondary text-lg">Loading projects from GitHub...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen pt-24 pb-16 relative">
@@ -42,7 +86,9 @@ export default function ProjectsPage() {
             My <span className="text-accent">Projects</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            A collection of my recent work showcasing various technologies and solutions
+            A collection of my work showcasing various technologies and solutions
+            <br />
+            <span className="text-sm text-accent">Auto-synced with GitHub • Updates hourly</span>
           </p>
         </motion.div>
 
@@ -60,12 +106,24 @@ export default function ProjectsPage() {
               className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                 filter === category
                   ? 'bg-accent text-black'
-                  : 'bg-secondary text-text-secondary hover:text-accent border border-accent/20 hover:border-accent/50'
+                  : 'bg-secondary/50 backdrop-blur-sm text-text-secondary hover:text-accent border border-accent/20 hover:border-accent/50'
               }`}
             >
               {(category as string).charAt(0).toUpperCase() + (category as string).slice(1)}
             </button>
           ))}
+        </motion.div>
+
+        {/* Project Count */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="text-center mb-8"
+        >
+          <p className="text-text-secondary">
+            Showing <span className="text-accent font-semibold">{filteredProjects.length}</span> projects
+          </p>
         </motion.div>
 
         {/* Projects Grid */}
@@ -85,6 +143,7 @@ export default function ProjectsPage() {
           </motion.div>
         )}
       </div>
+      <ScrollIndicator />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Icon from '@/components/ui/Icon';
 import { SITE_CONFIG } from '@/lib/constants';
 import { validateEmail } from '@/lib/helpers';
+import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -256,6 +257,7 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </div>
+      <ScrollIndicator />
     </div>
   );
 }
