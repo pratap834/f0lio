@@ -1,0 +1,122 @@
+[
+  {
+    "id": "skill-1",
+    "name": "Python",
+    "category": "backend",
+    "proficiency": 95
+  },
+  {
+    "id": "skill-2",
+    "name": "TensorFlow",
+    "category": "other",
+    "proficiency": 90
+  },
+  {
+    "id": "skill-3",
+    "name": "PyTorch",
+    "category": "other",
+    "proficiency": 90
+  },
+  {
+    "id": "skill-4",
+    "name": "Scikit-learn",
+    "category": "other",
+    "proficiency": 95
+  },
+  {
+    "id": "skill-5",
+    "name": "Deep Learning",
+    "category": "other",
+    "proficiency": 90
+  },
+  {
+    "id": "skill-6",
+    "name": "NLP",
+    "category": "other",
+    "proficiency": 88
+  },
+  {
+    "id": "skill-7",
+    "name": "Computer Vision",
+    "category": "other",
+    "proficiency": 85
+  },
+  {
+    "id": "skill-8",
+    "name": "MLOps",
+    "category": "other",
+    "proficiency": 85
+  },
+  {
+    "id": "skill-9",
+    "name": "Docker",
+    "category": "tools",
+    "proficiency": 90
+  },
+  {
+    "id": "skill-10",
+    "name": "Kubernetes",
+    "category": "tools",
+    "proficiency": 80
+  },
+  {
+    "id": "skill-11",
+    "name": "AWS",
+    "category": "tools",
+    "proficiency": 85
+  },
+  {
+    "id": "skill-12",
+    "name": "FastAPI",
+    "category": "backend",
+    "proficiency": 90
+  },
+  {
+    "id": "skill-13",
+    "name": "SQL",
+    "category": "backend",
+    "proficiency": 88
+  },
+  {
+    "id": "skill-14",
+    "name": "Git",
+    "category": "tools",
+    "proficiency": 95
+  },
+  {
+    "id": "skill-15",
+    "name": "Pandas",
+    "category": "other",
+    "proficiency": 95
+  },
+  {
+    "id": "skill-16",
+    "name": "NumPy",
+    "category": "other",
+    "proficiency": 95
+  },
+  {
+    "id": "skill-17",
+    "name": "Transformers",
+    "category": "other",
+    "proficiency": 85
+  },
+  {
+    "id": "skill-18",
+    "name": "OpenCV",
+    "category": "other",
+    "proficiency": 80
+  },
+  {
+    "id": "skill-19",
+    "name": "Apache Spark",
+    "category": "backend",
+    "proficiency": 75
+  },
+  {
+    "id": "skill-20",
+    "name": "MLflow",
+    "category": "tools",
+    "proficiency": 82
+  }
+]

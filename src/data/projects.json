@@ -1,0 +1,69 @@
+[
+  {
+    "id": "ml-model-deployment",
+    "title": "ML Model Deployment Pipeline",
+    "description": "End-to-end ML pipeline for training, deploying, and monitoring machine learning models in production",
+    "longDescription": "Built a complete MLOps pipeline using Docker, Kubernetes, and MLflow for automated model training, versioning, and deployment. Implemented CI/CD workflows for seamless model updates and monitoring dashboards for performance tracking.",
+    "thumbnail": "/images/projects/ml-pipeline.jpg",
+    "tech": ["Python", "TensorFlow", "Docker", "Kubernetes", "MLflow", "FastAPI", "AWS"],
+    "github": "https://github.com/yourusername/ml-deployment-pipeline",
+    "category": "Machine Learning",
+    "featured": true
+  },
+  {
+    "id": "nlp-sentiment-analysis",
+    "title": "Advanced NLP Sentiment Analyzer",
+    "description": "Deep learning model for real-time sentiment analysis with 95% accuracy on social media data",
+    "longDescription": "Developed a transformer-based sentiment analysis system using BERT and fine-tuned on domain-specific data. Achieved 95% accuracy with real-time inference capabilities. Deployed as a REST API serving 1000+ requests per second.",
+    "thumbnail": "/images/projects/nlp-sentiment.jpg",
+    "tech": ["Python", "PyTorch", "Transformers", "BERT", "FastAPI", "Redis", "MongoDB"],
+    "demo": "https://sentiment-analyzer-demo.vercel.app",
+    "github": "https://github.com/yourusername/nlp-sentiment",
+    "category": "Natural Language Processing",
+    "featured": true
+  },
+  {
+    "id": "computer-vision-detection",
+    "title": "Real-Time Object Detection System",
+    "description": "Custom YOLOv8-based object detection system for autonomous vehicle applications",
+    "longDescription": "Built and optimized a real-time object detection system achieving 60+ FPS on edge devices. Trained custom YOLOv8 model on specialized dataset with data augmentation and transfer learning techniques. Deployed on NVIDIA Jetson for edge inference.",
+    "thumbnail": "/images/projects/object-detection.jpg",
+    "tech": ["Python", "PyTorch", "YOLOv8", "OpenCV", "CUDA", "TensorRT", "NVIDIA Jetson"],
+    "github": "https://github.com/yourusername/object-detection",
+    "category": "Computer Vision",
+    "featured": true
+  },
+  {
+    "id": "recommendation-engine",
+    "title": "Personalized Recommendation Engine",
+    "description": "Collaborative filtering system serving personalized recommendations for 100K+ users",
+    "longDescription": "Designed and implemented a hybrid recommendation system combining collaborative filtering and content-based approaches. Utilized matrix factorization and deep learning embeddings to improve recommendation quality by 40%. Scaled to handle millions of interactions daily.",
+    "thumbnail": "/images/projects/recommendation.jpg",
+    "tech": ["Python", "TensorFlow", "Scikit-learn", "Apache Spark", "Redis", "PostgreSQL"],
+    "category": "Machine Learning",
+    "featured": true
+  },
+  {
+    "id": "time-series-forecasting",
+    "title": "Time Series Forecasting Platform",
+    "description": "LSTM-based forecasting system for predicting business metrics with high accuracy",
+    "longDescription": "Developed an automated time series forecasting platform using LSTM and Prophet models. Implemented feature engineering pipeline and hyperparameter optimization. Achieved 92% forecast accuracy for monthly predictions across multiple business metrics.",
+    "thumbnail": "/images/projects/forecasting.jpg",
+    "tech": ["Python", "TensorFlow", "Prophet", "Pandas", "NumPy", "Plotly", "Flask"],
+    "demo": "https://forecasting-demo.vercel.app",
+    "github": "https://github.com/yourusername/time-series-forecast",
+    "category": "Machine Learning",
+    "featured": false
+  },
+  {
+    "id": "mlops-monitoring",
+    "title": "ML Model Monitoring Dashboard",
+    "description": "Real-time monitoring and alerting system for ML models in production",
+    "longDescription": "Created a comprehensive monitoring solution for tracking model performance, data drift, and concept drift. Integrated automated alerting for model degradation and anomaly detection. Built with real-time visualization dashboards for MLOps teams.",
+    "thumbnail": "/images/projects/monitoring.jpg",
+    "tech": ["Python", "Prometheus", "Grafana", "FastAPI", "PostgreSQL", "Docker"],
+    "github": "https://github.com/yourusername/ml-monitoring",
+    "category": "MLOps",
+    "featured": false
+  }
+]
