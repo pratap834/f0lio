@@ -10,7 +10,7 @@ export default function Footer() {
   const socialLinks = [
     { platform: 'github', url: SITE_CONFIG.github, icon: 'github' },
     { platform: 'linkedin', url: SITE_CONFIG.linkedin, icon: 'linkedin' },
-    { platform: 'twitter', url: SITE_CONFIG.twitter, icon: 'twitter' },
+    { platform: 'instagram', url: SITE_CONFIG.instagram, icon: 'instagram' },
     { platform: 'email', url: `mailto:${SITE_CONFIG.email}`, icon: 'mail' },
   ];
 

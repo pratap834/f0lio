@@ -1,9 +1,10 @@
 export const SITE_CONFIG = {
   name: 'Pratap',
-  email: 'your.email@example.com', // Update this
-  github: 'https://github.com/yourusername', // Update this
-  linkedin: 'https://linkedin.com/in/yourusername', // Update this
-  twitter: 'https://twitter.com/yourusername', // Update this
+  email: 'pratapsubramani@gmail.com',
+  github: 'https://github.com/pratap834',
+  linkedin: 'https://www.linkedin.com/in/pratap-s-a61244253/',
+  instagram: 'https://www.instagram.com/pratap_834/',
+  twitter: 'https://twitter.com/yourusername', // Update if you have Twitter
 };
 
 export const NAV_LINKS = [

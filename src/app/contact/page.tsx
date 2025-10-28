@@ -66,7 +66,7 @@ export default function ContactPage() {
   const socialLinks = [
     { platform: 'GitHub', icon: 'github', url: SITE_CONFIG.github },
     { platform: 'LinkedIn', icon: 'linkedin', url: SITE_CONFIG.linkedin },
-    { platform: 'Twitter', icon: 'twitter', url: SITE_CONFIG.twitter },
+    { platform: 'Instagram', icon: 'instagram', url: SITE_CONFIG.instagram },
     { platform: 'Email', icon: 'mail', url: `mailto:${SITE_CONFIG.email}` },
   ];
 
