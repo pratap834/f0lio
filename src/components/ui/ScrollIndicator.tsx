@@ -6,7 +6,26 @@ import { useState, useEffect, useRef } from 'react';
 export default function ScrollIndicator() {
   const [isVisible, setIsVisible] = useState(true);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const handleModalOpened = () => {
+      setIsModalOpen(true);
+    };
+
+    const handleModalClosed = () => {
+      setIsModalOpen(false);
+    };
+
+    window.addEventListener('modal-opened', handleModalOpened);
+    window.addEventListener('modal-closed', handleModalClosed);
+
+    return () => {
+      window.removeEventListener('modal-opened', handleModalOpened);
+      window.removeEventListener('modal-closed', handleModalClosed);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,7 +105,7 @@ export default function ScrollIndicator() {
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && !isModalOpen && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

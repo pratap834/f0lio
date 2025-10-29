@@ -1,5 +1,17 @@
 [
   {
+    "id": "vitap-marketplace",
+    "title": "VIT-AP Student Marketplace Platform",
+    "description": "Full-stack marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities",
+    "longDescription": "Developed a full-stack marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities. Implemented secure authentication and authorization using Clerk with role-based access control for students and administrators, including email domain validation for campus-exclusive access. Designed and built RESTful APIs for post management, conversation handling, and user profiles with PostgreSQL database integration using Neon serverless architecture. Created responsive UI components with real-time message notifications, image upload functionality via Cloudinary, and dynamic filtering by categories and hostels. Integrated middleware for protected routes, onboarding workflows, and implemented error boundaries for robust error handling and improved user experience.",
+    "thumbnail": "/images/projects/vitap-marketplace.jpg",
+    "tech": ["Next.js 14", "TypeScript", "React", "PostgreSQL", "Clerk Auth", "Tailwind CSS", "Cloudinary", "shadcn/ui", "Neon"],
+    "link": "https://vitap-marketplace.vercel.app/",
+    "github": "",
+    "category": "Full Stack",
+    "featured": true
+  },
+  {
     "id": "hybrid-cnn-transformer",
     "title": "Hybrid CNN-Transformer for Skin Texture Analysis",
     "description": "Hybrid CNN-Transformer architecture to analyze and classify skin textures with 82% test accuracy",

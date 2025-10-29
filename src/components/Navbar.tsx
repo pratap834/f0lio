@@ -10,7 +10,9 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [aboutClickCount, setAboutClickCount] = useState(0);
+  const [projectsClickCount, setProjectsClickCount] = useState(0);
   const [lastClickTime, setLastClickTime] = useState(0);
+  const [lastProjectsClickTime, setLastProjectsClickTime] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,6 +39,25 @@ export default function Navbar() {
       }
     }
     setLastClickTime(now);
+  };
+
+  const handleProjectsClick = () => {
+    const now = Date.now();
+    // Reset counter if more than 2 seconds since last click
+    if (now - lastProjectsClickTime > 2000) {
+      setProjectsClickCount(1);
+    } else {
+      const newCount = projectsClickCount + 1;
+      setProjectsClickCount(newCount);
+      
+      // Trigger secret unlocked animation and save state on 5th click
+      if (newCount === 5) {
+        window.dispatchEvent(new Event('secret-unlocked'));
+        localStorage.setItem('secretProjectsUnlocked', 'true');
+        setProjectsClickCount(0); // Reset counter
+      }
+    }
+    setLastProjectsClickTime(now);
   };
 
   return (
@@ -70,7 +91,13 @@ export default function Navbar() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                onClick={link.label === 'About' ? handleAboutClick : undefined}
+                onClick={
+                  link.label === 'About' 
+                    ? handleAboutClick 
+                    : link.label === 'Projects' 
+                    ? handleProjectsClick 
+                    : undefined
+                }
               >
                 <motion.span
                   className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
@@ -125,6 +152,7 @@ export default function Navbar() {
                     href={link.href}
                     onClick={() => {
                       if (link.label === 'About') handleAboutClick();
+                      if (link.label === 'Projects') handleProjectsClick();
                       setIsMobileMenuOpen(false);
                     }}
                     className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"

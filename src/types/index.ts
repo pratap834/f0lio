@@ -6,6 +6,7 @@ export interface Project {
   thumbnail: string;
   tech: string[];
   demo?: string;
+  link?: string;
   github?: string;
   category?: string;
   featured?: boolean;

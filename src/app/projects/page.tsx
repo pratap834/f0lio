@@ -5,12 +5,28 @@ import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 import { Project } from '@/types';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
+import SecretUnlockedAnimation from '@/components/ui/SecretUnlockedAnimation';
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState<string>('all');
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<string[]>(['all']);
+  const [secretUnlocked, setSecretUnlocked] = useState(false);
+
+  useEffect(() => {
+    // Check if secret projects are unlocked
+    const isUnlocked = localStorage.getItem('secretProjectsUnlocked') === 'true';
+    setSecretUnlocked(isUnlocked);
+
+    // Listen for unlock event
+    const handleUnlock = () => {
+      setSecretUnlocked(true);
+    };
+    window.addEventListener('secret-unlocked', handleUnlock);
+
+    return () => window.removeEventListener('secret-unlocked', handleUnlock);
+  }, []);
 
   useEffect(() => {
     async function loadProjects() {
@@ -18,11 +34,18 @@ export default function ProjectsPage() {
         const response = await fetch('/api/projects');
         if (response.ok) {
           const data = await response.json();
-          setProjects(data.projects);
+          
+          // Filter out secret projects if not unlocked
+          let filteredProjects = data.projects;
+          if (!secretUnlocked) {
+            filteredProjects = data.projects.filter((p: Project) => p.id !== 'vitap-marketplace');
+          }
+          
+          setProjects(filteredProjects);
           
           // Extract unique categories
           const uniqueCategories = ['all', ...Array.from(new Set(
-            data.projects.map((p: Project) => p.category).filter(Boolean)
+            filteredProjects.map((p: Project) => p.category).filter(Boolean)
           ))] as string[];
           setCategories(uniqueCategories);
         }
@@ -34,7 +57,7 @@ export default function ProjectsPage() {
     }
 
     loadProjects();
-  }, []);
+  }, [secretUnlocked]);
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -144,6 +167,7 @@ export default function ProjectsPage() {
         )}
       </div>
       <ScrollIndicator />
+      <SecretUnlockedAnimation />
     </div>
   );
 }
