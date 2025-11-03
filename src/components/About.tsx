@@ -3,11 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import skillsData from '@/data/skills.json';
+import Image from 'next/image';
 
 export default function About() {
-  const topSkills = skillsData.slice(0, 8);
-
   return (
     <section id="about" className="py-20 bg-primary">
       <div className="container mx-auto px-6">
@@ -57,40 +55,31 @@ export default function About() {
             </Link>
           </motion.div>
 
-          {/* Skills Grid */}
+          {/* Profile Picture */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-2 gap-4"
+            className="flex justify-center"
           >
-            {topSkills.map((skill, index) => (
-              <motion.div
-                key={skill.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: 0.1 * index }}
-                className="p-4 rounded-xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all group"
-                whileHover={{ y: -4 }}
-              >
-                <div className="text-center">
-                  <p className="font-semibold text-text-primary group-hover:text-accent transition-colors mb-2">
-                    {skill.name}
-                  </p>
-                  <div className="w-full h-1.5 bg-primary/50 rounded-full overflow-hidden">
-                    <motion.div
-                      className="h-full bg-accent"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.proficiency}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1, delay: 0.1 * index + 0.5 }}
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+            <div className="relative w-72 h-72 md:w-96 md:h-96">
+              {/* Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-3xl blur-2xl"></div>
+              
+              {/* Image Container */}
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-accent/30 shadow-[0_20px_60px_rgba(0,173,181,0.3)] group">
+                <Image
+                  src="/profile.jpg"
+                  alt="Pratap - Machine Learning Engineer"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  priority
+                />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>

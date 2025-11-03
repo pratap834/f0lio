@@ -2,13 +2,11 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import skillsData from '@/data/skills.json';
+import Image from 'next/image';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 import BangAnimation from '@/components/ui/BangAnimation';
 
 export default function AboutPage() {
-  const coreSkills = ['Python', 'TensorFlow', 'PyTorch', 'Scikit-learn', 'Deep Learning', 'NLP', 'Computer Vision', 'MLOps'];
-  const techStack = ['Next.js', 'FastAPI', 'Docker', 'Kubernetes', 'AWS', 'SQL', 'Git', 'Pandas', 'NumPy'];
   
   const expertise = [
     {
@@ -64,7 +62,7 @@ export default function AboutPage() {
           </p>
         </motion.div>
 
-        {/* Bio Section */}
+        {/* Profile & Bio Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,36 +70,75 @@ export default function AboutPage() {
           className="mb-20"
         >
           <div className="bg-secondary/50 backdrop-blur-sm border border-accent/10 rounded-2xl p-8 md:p-12">
-            <div className="flex flex-col md:flex-row gap-8 items-start">
-              <div className="flex-shrink-0">
-                <div className="w-32 h-32 rounded-2xl bg-gradient-to-br from-accent/30 to-accent/10 flex items-center justify-center border-2 border-accent/30">
-                  <span className="text-5xl font-bold text-accent">P</span>
+            <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
+              {/* Profile Picture */}
+              <motion.div 
+                className="flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/30 to-accent/10 rounded-3xl blur-xl"></div>
+                  <div className="relative w-full h-full rounded-3xl overflow-hidden border-4 border-accent/30 shadow-[0_20px_60px_rgba(0,173,181,0.3)] group">
+                    <Image
+                      src="/profile.jpg"
+                      alt="Pratap"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
               
-              <div className="flex-1 space-y-4">
-                <h2 className="text-3xl font-bold">Hi, I&apos;m Pratap</h2>
-                <p className="text-text-secondary text-lg leading-relaxed">
-                  I&apos;m a <span className="text-accent font-semibold">Machine Learning Engineer</span> with hands-on experience in building data-driven solutions and intelligent systems. My work spans from optimizing SQL queries for enterprise data systems to contributing to ML research on Vision Transformers and CNNs.
-                </p>
-                <p className="text-text-secondary text-lg leading-relaxed">
-                  Currently, I&apos;m developing scalable full-stack platforms with modern tech stacks while maintaining a strong focus on ML/AI integration. I specialize in creating efficient data pipelines, automated workflows, and production-ready ML solutions that solve real-world problems.
-                </p>
+              {/* Bio Content */}
+              <div className="flex-1 space-y-6">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold mb-2">
+                    Hi, I&apos;m <span className="text-accent">Pratap</span>
+                  </h2>
+                  <p className="text-xl text-accent font-semibold mb-6">Machine Learning Engineer & AI Researcher</p>
+                </motion.div>
                 
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <div className="px-4 py-2 rounded-lg bg-primary/50 border border-accent/20">
-                    <p className="text-sm text-text-secondary">Location</p>
-                    <p className="text-accent font-semibold">India</p>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.5 }}
+                  className="space-y-4"
+                >
+                  <p className="text-text-secondary text-lg leading-relaxed">
+                    I&apos;m a <span className="text-accent font-semibold">Machine Learning Engineer</span> with hands-on experience in building data-driven solutions and intelligent systems. My work spans from optimizing SQL queries for enterprise data systems to contributing to ML research on Vision Transformers and CNNs.
+                  </p>
+                  <p className="text-text-secondary text-lg leading-relaxed">
+                    Currently, I&apos;m developing scalable full-stack platforms with modern tech stacks while maintaining a strong focus on ML/AI integration. I specialize in creating efficient data pipelines, automated workflows, and production-ready ML solutions that solve real-world problems.
+                  </p>
+                </motion.div>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                  className="flex flex-wrap gap-4 pt-4"
+                >
+                  <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
+                    <p className="text-sm text-text-secondary mb-1">Location</p>
+                    <p className="text-accent font-semibold text-lg">📍 India</p>
                   </div>
-                  <div className="px-4 py-2 rounded-lg bg-primary/50 border border-accent/20">
-                    <p className="text-sm text-text-secondary">Focus</p>
-                    <p className="text-accent font-semibold">ML Engineering</p>
+                  <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
+                    <p className="text-sm text-text-secondary mb-1">Focus</p>
+                    <p className="text-accent font-semibold text-lg">🎯 ML Engineering</p>
                   </div>
-                  <div className="px-4 py-2 rounded-lg bg-primary/50 border border-accent/20">
-                    <p className="text-sm text-text-secondary">Available</p>
-                    <p className="text-accent font-semibold">For Opportunities</p>
+                  <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
+                    <p className="text-sm text-text-secondary mb-1">Status</p>
+                    <p className="text-accent font-semibold text-lg">✨ Available</p>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -142,55 +179,6 @@ export default function AboutPage() {
           </div>
         </motion.div>
 
-        {/* Technical Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="space-y-12"
-        >
-          {/* Core ML Skills */}
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Core <span className="text-accent">ML Skills</span>
-            </h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {coreSkills.map((skill, index) => (
-                <motion.div
-                  key={skill}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.6 + index * 0.05 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="px-6 py-3 bg-secondary/50 backdrop-blur-sm border border-accent/20 rounded-full text-text-primary font-semibold hover:border-accent hover:bg-accent/10 transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Tech Stack */}
-          <div>
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Tech <span className="text-accent">Stack</span>
-            </h2>
-            <div className="flex flex-wrap justify-center gap-3">
-              {techStack.map((tech, index) => (
-                <motion.div
-                  key={tech}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.3, delay: 0.8 + index * 0.05 }}
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  className="px-6 py-3 bg-primary/50 border border-accent/10 rounded-full text-text-secondary hover:text-accent hover:border-accent/30 transition-all duration-300 cursor-default"
-                >
-                  {tech}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
       <ScrollIndicator />
       <BangAnimation />

@@ -11,6 +11,7 @@ export default function Projects() {
   const [loading, setLoading] = useState(true);
   const [secretUnlocked, setSecretUnlocked] = useState(false);
 
+  // Check localStorage on mount (client-side only)
   useEffect(() => {
     // Check if secret projects are unlocked
     const isUnlocked = localStorage.getItem('secretProjectsUnlocked') === 'true';
@@ -25,6 +26,7 @@ export default function Projects() {
     return () => window.removeEventListener('secret-unlocked', handleUnlock);
   }, []);
 
+  // Load projects whenever secretUnlocked changes
   useEffect(() => {
     async function loadProjects() {
       try {
@@ -32,11 +34,13 @@ export default function Projects() {
         if (response.ok) {
           const data = await response.json();
           
-          // Filter out secret projects if not unlocked
-          let filteredProjects = data.projects;
-          if (!secretUnlocked) {
-            filteredProjects = data.projects.filter((p: Project) => p.id !== 'vitap-marketplace');
-          }
+          // Always filter out secret projects if not unlocked
+          const filteredProjects = data.projects.filter((p: Project) => {
+            if (p.id === 'vitap-marketplace') {
+              return secretUnlocked;
+            }
+            return true;
+          });
           
           setProjects(filteredProjects);
         }
