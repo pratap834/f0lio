@@ -10,22 +10,22 @@ export default function AboutPage() {
   
   const expertise = [
     {
-      icon: '🧠',
+      icon: '',
       title: 'Machine Learning',
       description: 'Building end-to-end ML pipelines, from data preprocessing to model deployment, with focus on scalable and production-ready solutions.'
     },
     {
-      icon: '📊',
+      icon: '',
       title: 'Data Engineering',
       description: 'Designing efficient data pipelines and automating workflows for large-scale data processing and analytics.'
     },
     {
-      icon: '🔍',
+      icon: '',
       title: 'ML Research',
       description: 'Exploring Vision Transformers, CNNs, and modern architectures to optimize inference strategies for real-world applications.'
     },
     {
-      icon: '⚡',
+      icon: '',
       title: 'Full Stack Development',
       description: 'Creating scalable web applications with modern frameworks, authentication systems, and data-centric platforms.'
     }
@@ -128,15 +128,15 @@ export default function AboutPage() {
                 >
                   <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
                     <p className="text-sm text-text-secondary mb-1">Location</p>
-                    <p className="text-accent font-semibold text-lg">📍 India</p>
+                    <p className="text-accent font-semibold text-lg">India</p>
                   </div>
                   <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
                     <p className="text-sm text-text-secondary mb-1">Focus</p>
-                    <p className="text-accent font-semibold text-lg">🎯 ML Engineering</p>
+                    <p className="text-accent font-semibold text-lg">ML Engineering</p>
                   </div>
                   <div className="px-6 py-3 rounded-xl bg-primary/50 border border-accent/20 hover:border-accent/40 transition-all duration-300">
                     <p className="text-sm text-text-secondary mb-1">Status</p>
-                    <p className="text-accent font-semibold text-lg">✨ Available</p>
+                    <p className="text-accent font-semibold text-lg">Available</p>
                   </div>
                 </motion.div>
               </div>
