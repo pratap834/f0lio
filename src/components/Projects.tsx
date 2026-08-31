@@ -9,14 +9,40 @@ import { Project } from '@/types';
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
+  const [secretUnlocked, setSecretUnlocked] = useState(false);
 
+  // Check localStorage on mount (client-side only)
+  useEffect(() => {
+    // Check if secret projects are unlocked
+    const isUnlocked = localStorage.getItem('secretProjectsUnlocked') === 'true';
+    setSecretUnlocked(isUnlocked);
+
+    // Listen for unlock event
+    const handleUnlock = () => {
+      setSecretUnlocked(true);
+    };
+    window.addEventListener('secret-unlocked', handleUnlock);
+
+    return () => window.removeEventListener('secret-unlocked', handleUnlock);
+  }, []);
+
+  // Load projects whenever secretUnlocked changes
   useEffect(() => {
     async function loadProjects() {
       try {
         const response = await fetch('/api/projects');
         if (response.ok) {
           const data = await response.json();
-          setProjects(data.projects || []);
+          
+          // Always filter out secret projects if not unlocked
+          const filteredProjects = data.projects.filter((p: Project) => {
+            if (p.id === 'vitap-marketplace') {
+              return secretUnlocked;
+            }
+            return true;
+          });
+          
+          setProjects(filteredProjects);
         }
       } catch (error) {
         console.error('Error loading projects:', error);
@@ -26,29 +52,17 @@ export default function Projects() {
     }
 
     loadProjects();
-  }, []);
+  }, [secretUnlocked]);
 
   const featuredProjects = projects.filter((p: Project) => p.featured).slice(0, 3);
 
   if (loading) {
     return (
-      <section id="projects" className="py-8">
-        <div className="space-y-6">
-          <div className="space-y-2">
-            <p className="text-xs font-mono text-accent uppercase tracking-widest">
-              Selected Work
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100">
-              Featured Projects
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((i) => (
-              <div
-                key={i}
-                className="h-80 rounded-xl bg-zinc-900/40 border border-zinc-800 animate-pulse"
-              />
-            ))}
+      <section id="projects" className="py-20">
+        <div className="container mx-auto px-6">
+          <div className="text-center">
+            <div className="inline-block w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin" />
+            <p className="text-text-secondary mt-4">Loading projects...</p>
           </div>
         </div>
       </section>
@@ -56,33 +70,43 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-8">
-      <div className="space-y-8">
-        {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <p className="text-xs font-mono text-accent uppercase tracking-widest">
-              Selected Work
-            </p>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100">
-              Featured AI Projects
-            </h2>
-          </div>
-          <Link
-            href="/projects"
-            className="text-sm font-medium text-zinc-400 hover:text-accent transition-colors inline-flex items-center gap-1 self-start sm:self-auto"
-          >
-            <span>View all projects</span>
-            <span>→</span>
-          </Link>
-        </div>
+    <section id="projects" className="py-20">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Featured <span className="text-accent">Projects</span>
+          </h2>
+          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+            Check out some of my recent work (Auto-synced from GitHub)
+          </p>
+        </motion.div>
 
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProjects.map((project: Project, index: number) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center"
+        >
+          <Link
+            href="/projects"
+            className="inline-block px-8 py-4 rounded-full bg-accent text-black font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_4px_12px_var(--border-glow)]"
+          >
+            View All Projects →
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

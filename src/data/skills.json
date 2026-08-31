@@ -1,128 +1,122 @@
 [
   {
     "id": "skill-1",
-    "name": "PyTorch",
-    "category": "ai_ml",
-    "proficiency": 92
+    "name": "Python",
+    "category": "backend",
+    "proficiency": 95
   },
   {
     "id": "skill-2",
-    "name": "TensorFlow & Keras",
-    "category": "ai_ml",
+    "name": "TensorFlow",
+    "category": "other",
     "proficiency": 90
   },
   {
     "id": "skill-3",
-    "name": "Hugging Face Transformers",
-    "category": "ai_ml",
+    "name": "PyTorch",
+    "category": "other",
     "proficiency": 90
   },
   {
     "id": "skill-4",
-    "name": "Vision Transformers (ViT) & CNNs",
-    "category": "ai_ml",
-    "proficiency": 88
+    "name": "Scikit-learn",
+    "category": "other",
+    "proficiency": 95
   },
   {
     "id": "skill-5",
-    "name": "Large Language Models (LLMs)",
-    "category": "ai_ml",
-    "proficiency": 92
+    "name": "Deep Learning",
+    "category": "other",
+    "proficiency": 90
   },
   {
     "id": "skill-6",
-    "name": "FAISS & Vector Embeddings",
-    "category": "ai_ml",
-    "proficiency": 86
-  },
-  {
-    "id": "skill-7",
-    "name": "Scikit-learn",
-    "category": "ai_ml",
-    "proficiency": 94
-  },
-  {
-    "id": "skill-8",
-    "name": "Computer Vision & OpenCV",
-    "category": "data_science",
+    "name": "NLP",
+    "category": "other",
     "proficiency": 88
   },
   {
+    "id": "skill-7",
+    "name": "Computer Vision",
+    "category": "other",
+    "proficiency": 85
+  },
+  {
+    "id": "skill-8",
+    "name": "MLOps",
+    "category": "other",
+    "proficiency": 85
+  },
+  {
     "id": "skill-9",
-    "name": "Natural Language Processing (NLP)",
-    "category": "data_science",
+    "name": "Docker",
+    "category": "tools",
     "proficiency": 90
   },
   {
     "id": "skill-10",
-    "name": "Pandas & NumPy",
-    "category": "data_science",
-    "proficiency": 95
+    "name": "Kubernetes",
+    "category": "tools",
+    "proficiency": 80
   },
   {
     "id": "skill-11",
-    "name": "Data Preprocessing & Augmentation",
-    "category": "data_science",
-    "proficiency": 92
+    "name": "AWS",
+    "category": "tools",
+    "proficiency": 85
   },
   {
     "id": "skill-12",
-    "name": "Model Evaluation & Metrics",
-    "category": "data_science",
+    "name": "FastAPI",
+    "category": "backend",
     "proficiency": 90
   },
   {
     "id": "skill-13",
-    "name": "Python",
+    "name": "SQL",
     "category": "backend",
-    "proficiency": 96
+    "proficiency": 88
   },
   {
     "id": "skill-14",
-    "name": "FastAPI",
-    "category": "backend",
-    "proficiency": 92
+    "name": "Git",
+    "category": "tools",
+    "proficiency": 95
   },
   {
     "id": "skill-15",
-    "name": "Flask",
-    "category": "backend",
-    "proficiency": 88
+    "name": "Pandas",
+    "category": "other",
+    "proficiency": 95
   },
   {
     "id": "skill-16",
-    "name": "PostgreSQL & SQL",
-    "category": "backend",
-    "proficiency": 90
+    "name": "NumPy",
+    "category": "other",
+    "proficiency": 95
   },
   {
     "id": "skill-17",
-    "name": "TypeScript & Next.js",
-    "category": "backend",
-    "proficiency": 86
+    "name": "Transformers",
+    "category": "other",
+    "proficiency": 85
   },
   {
     "id": "skill-18",
-    "name": "Docker & Containers",
-    "category": "cloud_mlops",
-    "proficiency": 88
+    "name": "OpenCV",
+    "category": "other",
+    "proficiency": 80
   },
   {
     "id": "skill-19",
-    "name": "AWS (EC2, Lambda, S3)",
-    "category": "cloud_mlops",
-    "proficiency": 84
+    "name": "Apache Spark",
+    "category": "backend",
+    "proficiency": 75
   },
   {
     "id": "skill-20",
-    "name": "MLOps & MLflow",
-    "category": "cloud_mlops",
+    "name": "MLflow",
+    "category": "tools",
     "proficiency": 82
-  },
-  {
-    "id": "skill-21",
-    "name": "Git & CI/CD",
-    "category": "cloud_mlops",
-    "proficiency": 94
   }
 ]

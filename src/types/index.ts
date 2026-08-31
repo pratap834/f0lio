@@ -31,7 +31,7 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'ai_ml' | 'data_science' | 'backend' | 'cloud_mlops' | 'tools' | 'frontend' | 'other';
+  category: 'frontend' | 'backend' | 'tools' | 'other';
   proficiency?: number;
   icon?: string;
 }
