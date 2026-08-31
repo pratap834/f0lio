@@ -35,7 +35,7 @@ export default function ExperiencePage() {
             Work <span className="text-accent">Experience</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            My professional journey and the amazing teams I&apos;ve worked with
+            Practical AI engineering, applied deep learning research, and scalable data pipeline experience
           </p>
         </motion.div>
 

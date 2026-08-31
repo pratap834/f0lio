@@ -58,7 +58,7 @@ export default function Projects() {
 
   if (loading) {
     return (
-      <section id="projects" className="py-20 bg-secondary">
+      <section id="projects" className="py-20">
         <div className="container mx-auto px-6">
           <div className="text-center">
             <div className="inline-block w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin" />
@@ -70,7 +70,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20 bg-secondary">
+    <section id="projects" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,7 +83,7 @@ export default function Projects() {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Check out some of my recent work (Auto-synced from GitHub)
+            Multimodal systems, deep learning models, LLM architectures &amp; AI applications
           </p>
         </motion.div>
 

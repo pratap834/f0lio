@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function ContactCTA() {
   return (
-    <section className="py-20 bg-secondary">
+    <section className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -21,11 +21,10 @@ export default function ContactCTA() {
             
             <div className="relative z-10">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Let&apos;s Work <span className="text-accent">Together</span>
+                Let&apos;s Build <span className="text-accent">Intelligent Systems</span>
               </h2>
               <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-                Have a project in mind? I&apos;m always interested in hearing about new opportunities
-                and collaborations. Let&apos;s create something amazing together!
+                Actively seeking full-time and internship opportunities in <span className="text-accent font-semibold">AI Engineering</span>, <span className="text-accent font-semibold">Machine Learning</span>, and <span className="text-accent font-semibold">Computer Vision</span>. Let&apos;s connect and create something remarkable!
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

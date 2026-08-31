@@ -1,0 +1,1418 @@
+{
+  "facts": [
+    {
+      "id": "movie-001",
+      "type": "movie_fact",
+      "category": "the_matrix",
+      "content": "The Matrix's iconic green code wasn't random—it was inspired by scanned sushi recipes.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-002",
+      "type": "ai_reference",
+      "category": "iron_man",
+      "content": "Tony Stark probably had better CI/CD pipelines than most startups.",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-003",
+      "type": "ai_reference",
+      "category": "iron_man",
+      "content": "Jarvis was basically an AI assistant before it became mainstream.",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-004",
+      "type": "comparison",
+      "category": "the_batman",
+      "content": "If Batman wrote code, every function would have contingency plans.",
+      "source": "The Batman"
+    },
+    {
+      "id": "movie-005",
+      "type": "movie_fact",
+      "category": "breaking_bad",
+      "content": "Breaking Bad has one of the highest-rated television finales ever.",
+      "source": "Breaking Bad"
+    },
+    {
+      "id": "movie-006",
+      "type": "science_fact",
+      "category": "interstellar",
+      "content": "Interstellar's black hole visualization contributed to published scientific research.",
+      "source": "Interstellar"
+    },
+    {
+      "id": "movie-007",
+      "type": "cs_reference",
+      "category": "mr_robot",
+      "content": "Mr. Robot contains some of the most technically accurate hacking scenes in television.",
+      "source": "Mr. Robot"
+    },
+    {
+      "id": "movie-008",
+      "type": "comparison",
+      "category": "silicon_valley",
+      "content": "Silicon Valley perfectly satirizes startup culture.",
+      "source": "Silicon Valley"
+    },
+    {
+      "id": "movie-009",
+      "type": "cs_reference",
+      "category": "doctor_strange",
+      "content": "Doctor Strange manipulates timelines; Git lets developers do something similar.",
+      "source": "Doctor Strange"
+    },
+    {
+      "id": "movie-010",
+      "type": "comparison",
+      "category": "john_wick",
+      "content": "John Wick debugs problems with much more determination than developers.",
+      "source": "John Wick"
+    },
+    {
+      "id": "movie-011",
+      "type": "dev_joke",
+      "category": "general",
+      "content": "Why do programmers prefer dark mode? Because light attracts bugs!",
+      "source": null
+    },
+    {
+      "id": "movie-012",
+      "type": "movie_fact",
+      "category": "star_wars",
+      "content": "The word 'droid' in Star Wars is actually a shortened form of 'android'.",
+      "source": "Star Wars"
+    },
+    {
+      "id": "movie-013",
+      "type": "behind_the_scenes",
+      "category": "lord_of_the_rings",
+      "content": "Viggo Mortensen actually learned to wield a real sword for his role as Aragorn.",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-014",
+      "type": "quote",
+      "category": "the_matrix",
+      "content": "There is no spoon. — The Oracle",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-015",
+      "type": "ml_joke",
+      "category": "general",
+      "content": "My neural network is like Loki—full of mischief and unpredictable variants.",
+      "source": "Loki"
+    },
+    {
+      "id": "movie-016",
+      "type": "movie_fact",
+      "category": "inception",
+      "content": "Inception's spinning top totem was actually inspired by a scene in the film 'The Lake House'.",
+      "source": "Inception"
+    },
+    {
+      "id": "movie-017",
+      "type": "easter_egg",
+      "category": "marvel",
+      "content": "In the Avengers credits, the shawarma scene was added after the film's release because of fan demand.",
+      "source": "The Avengers"
+    },
+    {
+      "id": "movie-018",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "Why do Java developers wear glasses? Because they don't do C#! (see)",
+      "source": null
+    },
+    {
+      "id": "movie-019",
+      "type": "movie_fact",
+      "category": "the_dark_knight",
+      "content": "Heath Ledger's Joker makeup was applied by make-up artist John Caglione Jr., who won an Oscar for the work.",
+      "source": "The Dark Knight"
+    },
+    {
+      "id": "movie-020",
+      "type": "comparison",
+      "category": "inception",
+      "content": "Inception's dream layers are like nested containers—docker run within docker run within docker.",
+      "source": "Inception"
+    },
+    {
+      "id": "movie-021",
+      "type": "movie_fact",
+      "category": "gravity",
+      "content": "Sandra Bullock almost died during a zero-gravity training exercise when a prop exploded.",
+      "source": "Gravity"
+    },
+    {
+      "id": "movie-022",
+      "type": "quote",
+      "category": "star_wars",
+      "content": "Do or do not, there is no try. — Yoda",
+      "source": "Star Wars"
+    },
+    {
+      "id": "movie-023",
+      "type": "cs_reference",
+      "category": "the_imitation_game",
+      "content": "The Imitation Game portrays Alan Turing, whose work laid the foundation for modern computer science.",
+      "source": "The Imitation Game"
+    },
+    {
+      "id": "movie-024",
+      "type": "movie_fact",
+      "category": "the_social_network",
+      "content": "The Social Network was based on a book called 'The Accidental Billionaires' by Ben Mezrich.",
+      "source": "The Social Network"
+    },
+    {
+      "id": "movie-025",
+      "type": "easter_egg",
+      "category": "stranger_things",
+      "content": "The Upside Down was designed to look like a distorted version of Hawkins Lab.",
+      "source": "Stranger Things"
+    },
+    {
+      "id": "movie-026",
+      "type": "cloud_joke",
+      "category": "general",
+      "content": "Thor's hammer is basically AWS—only the worthy (authorized) can access it.",
+      "source": "Thor"
+    },
+    {
+      "id": "movie-027",
+      "type": "movie_fact",
+      "category": "pirates_of_the_caribbean",
+      "content": "Johnny Depp improvised the line 'Not all treasure is silver and gold, mate' in the first Pirates film.",
+      "source": "Pirates of the Caribbean"
+    },
+    {
+      "id": "movie-028",
+      "type": "comparison",
+      "category": "the_martian",
+      "content": "The Martian's problem-solving is basically what developers do daily—improvise, adapt, overcome.",
+      "source": "The Martian"
+    },
+    {
+      "id": "movie-029",
+      "type": "ai_reference",
+      "category": "ex_machina",
+      "content": "Ex Machina explores the Turing Test—whether AI can exhibit intelligent behavior indistinguishable from humans.",
+      "source": "Ex Machina"
+    },
+    {
+      "id": "movie-030",
+      "type": "movie_fact",
+      "category": "lord_of_the_rings",
+      "content": "The entire Lord of the Rings trilogy was shot in one continuous production schedule of 274 days.",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-031",
+      "type": "dev_joke",
+      "category": "general",
+      "content": "There are only 10 types of people in the world: those who understand binary and those who don't.",
+      "source": null
+    },
+    {
+      "id": "movie-032",
+      "type": "movie_fact",
+      "category": "dune",
+      "content": "Dune's sandworm designs were inspired by actual desert wildlife documentaries.",
+      "source": "Dune"
+    },
+    {
+      "id": "movie-033",
+      "type": "comparison",
+      "category": "dark",
+      "content": "Dark's time travel loops are like recursive functions with no base case.",
+      "source": "Dark"
+    },
+    {
+      "id": "movie-034",
+      "type": "quote",
+      "category": "breaking_bad",
+      "content": "I am the one who knocks! — Walter White",
+      "source": "Breaking Bad"
+    },
+    {
+      "id": "movie-035",
+      "type": "movie_fact",
+      "category": "blade_runner_2049",
+      "content": "Blade Runner 2049 used over 150 practical sets, with real smoke and rain on set.",
+      "source": "Blade Runner 2049"
+    },
+    {
+      "id": "movie-036",
+      "type": "startup_joke",
+      "category": "general",
+      "content": "Steve Jobs and Tony Stark would probably argue about who invented the arc reactor first.",
+      "source": null
+    },
+    {
+      "id": "movie-037",
+      "type": "movie_fact",
+      "category": "tenet",
+      "content": "Tenet's inverted scenes were filmed with reversed dialogue that actors had to memorize backwards.",
+      "source": "Tenet"
+    },
+    {
+      "id": "movie-038",
+      "type": "easter_egg",
+      "category": "the_office",
+      "content": "In The Office, Dwight's desk has a miniaturized version of Mount Rushmore made of beets.",
+      "source": "The Office"
+    },
+    {
+      "id": "movie-039",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "Why do programmers prefer blizzards? Because they handle exceptions with snow catches.",
+      "source": null
+    },
+    {
+      "id": "movie-040",
+      "type": "movie_fact",
+      "category": "game_of_thrones",
+      "content": "Game of Thrones used the most expensive set in TV history—a full-size castle for Winterfell.",
+      "source": "Game of Thrones"
+    },
+    {
+      "id": "movie-041",
+      "type": "comparison",
+      "category": "interstellar",
+      "content": "Interstellar's Endurance station is like a distributed system—everything depends on the hub staying alive.",
+      "source": "Interstellar"
+    },
+    {
+      "id": "movie-042",
+      "type": "movie_fact",
+      "category": "harry_potter",
+      "content": "The sorting hat song in the first Harry Potter movie was written by J.K. Rowling herself.",
+      "source": "Harry Potter"
+    },
+    {
+      "id": "movie-043",
+      "type": "cs_reference",
+      "category": "the_matrix",
+      "content": "The Matrix's bullet-time effect was achieved using 121 cameras triggered in sequence.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-044",
+      "type": "movie_fact",
+      "category": "mission_impossible",
+      "content": "Tom Cruise performed the HALO jump in Mission: Impossible – Dead Reckoning himself, falling from 27,000 feet.",
+      "source": "Mission: Impossible"
+    },
+    {
+      "id": "movie-045",
+      "type": "ml_joke",
+      "category": "general",
+      "content": "I trained a model on Avengers movies. It predicted 'another superhero landing' with 99% confidence.",
+      "source": "The Avengers"
+    },
+    {
+      "id": "movie-046",
+      "type": "quote",
+      "category": "harry_potter",
+      "content": "It does not do to dwell on dreams and forget to live. — Dumbledore",
+      "source": "Harry Potter"
+    },
+    {
+      "id": "movie-047",
+      "type": "movie_fact",
+      "category": "oppenheimer",
+      "content": "Oppenheimer was filmed with IMAX cameras that could only record 10 minutes of footage at a time.",
+      "source": "Oppenheimer"
+    },
+    {
+      "id": "movie-048",
+      "type": "behind_the_scenes",
+      "category": "ready_player_one",
+      "content": "Ready Player One's Oasis was built using a custom VR engine developed specifically for the film.",
+      "source": "Ready Player One"
+    },
+    {
+      "id": "movie-049",
+      "type": "comparison",
+      "category": "sherlock",
+      "content": "Sherlock Holmes would solve debugging mysteries faster than any profiler—elementary, my dear Watson.",
+      "source": "Sherlock"
+    },
+    {
+      "id": "movie-050",
+      "type": "movie_fact",
+      "category": "friends",
+      "content": "The couch in Friends' Central Perk was originally found in a thrift store in Los Angeles.",
+      "source": "Friends"
+    },
+    {
+      "id": "movie-051",
+      "type": "startup_joke",
+      "category": "general",
+      "content": "If Airbnb started as a startup, Tony Stark would have just built a flying castle instead.",
+      "source": null
+    },
+    {
+      "id": "movie-052",
+      "type": "movie_fact",
+      "category": "squid_game",
+      "content": "Squid Game's doll in the red light, green light game was controlled by a team of 8 puppeteers.",
+      "source": "Squid Game"
+    },
+    {
+      "id": "movie-053",
+      "type": "easter_egg",
+      "category": "marvel",
+      "content": "In every Marvel movie, the number 88 appears as an Easter egg referencing Back to the Future.",
+      "source": "Marvel Cinematic Universe"
+    },
+    {
+      "id": "movie-054",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "A SQL query walks into a bar, approaches two tables and asks: 'May I join you?'",
+      "source": null
+    },
+    {
+      "id": "movie-055",
+      "type": "movie_fact",
+      "category": "top_gun",
+      "content": "Tom Cruise insisted on flying actual fighter jets for the Top Gun: Maverick sequel.",
+      "source": "Top Gun: Maverick"
+    },
+    {
+      "id": "movie-056",
+      "type": "comparison",
+      "category": "peaky_blinders",
+      "content": "Peaky Blinders' razor blade hats are like zero-day exploits—sharp, unexpected, and dangerous.",
+      "source": "Peaky Blinders"
+    },
+    {
+      "id": "movie-057",
+      "type": "quote",
+      "category": "the_dark_knight",
+      "content": "Why so serious? — The Joker",
+      "source": "The Dark Knight"
+    },
+    {
+      "id": "movie-058",
+      "type": "movie_fact",
+      "category": "spider_man",
+      "content": "Spider-Man: Into the Spider-Verse used a unique animation style that took 2 years to develop.",
+      "source": "Spider-Man: Into the Spider-Verse"
+    },
+    {
+      "id": "movie-059",
+      "type": "cs_reference",
+      "category": "the_matrix",
+      "content": "The Matrix's digital rain effect pre-dated real computer monitoring terminals by decades of sci-fi imagination.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-060",
+      "type": "movie_fact",
+      "category": "hobbit",
+      "content": "The Hobbit was shot at 48 frames per second, double the traditional 24 fps, causing some theaters to refuse to screen it.",
+      "source": "The Hobbit"
+    },
+    {
+      "id": "movie-061",
+      "type": "behind_the_scenes",
+      "category": "the_prestige",
+      "content": "For The Prestige, Christian Bale and Hugh Jackman learned actual stage magic tricks for their roles.",
+      "source": "The Prestige"
+    },
+    {
+      "id": "movie-062",
+      "type": "ml_joke",
+      "category": "general",
+      "content": "My loss function is like Darth Vader—it always wants to minimize, but keeps pulling me to the dark side.",
+      "source": "Star Wars"
+    },
+    {
+      "id": "movie-063",
+      "type": "easter_egg",
+      "category": "lord_of_the_rings",
+      "content": "In LOTR, the ring's inscription is in Tengwar, but the actors were speaking Black Speech—an entirely fictional language.",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-064",
+      "type": "movie_fact",
+      "category": "better_call_saul",
+      "content": "Better Call Saul has a 98% critical approval rating on Rotten Tomatoes, higher than Breaking Bad.",
+      "source": "Better Call Saul"
+    },
+    {
+      "id": "movie-065",
+      "type": "comparison",
+      "category": "dark",
+      "content": "Dark's four-season arc is like a well-architected system—each season builds on the previous, and the finale resolves everything.",
+      "source": "Dark"
+    },
+    {
+      "id": "movie-066",
+      "type": "dev_joke",
+      "category": "general",
+      "content": "Why do JavaScript developers prefer dark mode? Because light mode is for humans, not machines.",
+      "source": null
+    },
+    {
+      "id": "movie-067",
+      "type": "movie_fact",
+      "category": "x_men",
+      "content": "X-Men's Quicksilver scene in Days of Future Past used 116 takes and a real 1970s Camaro.",
+      "source": "X-Men: Days of Future Past"
+    },
+    {
+      "id": "movie-068",
+      "type": "quote",
+      "category": "the_social_network",
+      "content": "A person's Facebook is a reflection of their character. Facebook is an infinite loop—people check it forever.",
+      "source": "The Social Network"
+    },
+    {
+      "id": "movie-069",
+      "type": "cloud_joke",
+      "category": "general",
+      "content": "If the cloud is someone else's computer, then the Infinity Gauntlet is someone else's serverless function.",
+      "source": "Avengers: Infinity War"
+    },
+    {
+      "id": "movie-070",
+      "type": "movie_fact",
+      "category": "money_heist",
+      "content": "Money Heist (La Casa de Papel) was originally written as a book series by Álex Pina before becoming a TV show.",
+      "source": "Money Heist"
+    },
+    {
+      "id": "movie-071",
+      "type": "movie_fact",
+      "category": "the_office",
+      "content": "The Office's 'that's what she said' joke was improvised by Steve Carell on the spot.",
+      "source": "The Office"
+    },
+    {
+      "id": "movie-072",
+      "type": "comparison",
+      "category": "westworld",
+      "content": "Westworld's hosts running into loops is like infinite retries in a test suite that never passes.",
+      "source": "Westworld"
+    },
+    {
+      "id": "movie-023a",
+      "type": "movie_fact",
+      "category": "the_martian",
+      "content": "The Martian's Matt Damon character grew potatoes in a modified Mars rover seat, inspired by real NASA experiments.",
+      "source": "The Martian"
+    },
+    {
+      "id": "movie-073",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "Why did the developer go broke? Because he used up all his cache!",
+      "source": null
+    },
+    {
+      "id": "movie-074",
+      "type": "movie_fact",
+      "category": "star_wars",
+      "content": "Star Wars' lightsaber sounds were created by combining the hum of an old film projector with a television set.",
+      "source": "Star Wars"
+    },
+    {
+      "id": "movie-075",
+      "type": "easter_egg",
+      "category": "silicon_valley",
+      "content": "Silicon Valley's Pied Piper logo is actually a real compression algorithm visualization.",
+      "source": "Silicon Valley"
+    },
+    {
+      "id": "movie-076",
+      "type": "movie_fact",
+      "category": "the_hobbit",
+      "content": "The Hobbit trilogy required 278 shooting days across 155 locations in New Zealand.",
+      "source": "The Hobbit"
+    },
+    {
+      "id": "movie-077",
+      "type": "comparison",
+      "category": "matrix",
+      "content": "The Matrix's red pill is like a debug breakpoint—you choose to see reality or stay in the simulation.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-078",
+      "type": "movie_fact",
+      "category": "loki",
+      "content": "Loki's TVA time-keep watch prop was a real astronomical instrument from the 1800s.",
+      "source": "Loki"
+    },
+    {
+      "id": "movie-079",
+      "type": "cs_reference",
+      "category": "the_matrix",
+      "content": "The Matrix's simulated reality concept prefigures virtual reality by 25 years of public imagination.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-080",
+      "type": "movie_fact",
+      "category": "moon_knight",
+      "content": "Moon Knight's dissociative identity disorder was researched by consulting with neurologists and psychologists.",
+      "source": "Moon Knight"
+    },
+    {
+      "id": "movie-081",
+      "type": "quote",
+      "category": "titanic",
+      "content": "I'm the king of the world! — Jack Dawson",
+      "source": "Titanic"
+    },
+    {
+      "id": "movie-281",
+      "type": "movie_fact",
+      "category": "titanic",
+      "content": "Titanic's wreckage was recreated using over 450,000 photographs of the actual ship's remains.",
+      "source": "Titanic"
+    },
+    {
+      "id": "movie-082",
+      "type": "startup_joke",
+      "category": "general",
+      "content": "If Tony Stark had a pitch deck, it would just be one slide saying 'I am Iron Man' and a Series A check.",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-083",
+      "type": "movie_fact",
+      "category": "the_boys",
+      "content": "The Boys' 'Bunny' costume was worn for over 6 hours on set due to the actor's commitment to authenticity.",
+      "source": "The Boys"
+    },
+    {
+      "id": "movie-084",
+      "type": "easter_egg",
+      "category": "doctor_strange",
+      "content": "Doctor Strange's Sanctum Sanctorum has a hidden library of 10,000 magical books—each one a different design.",
+      "source": "Doctor Strange"
+    },
+    {
+      "id": "movie-085",
+      "type": "dev_joke",
+      "category": "general",
+      "content": "Why do programmers hate nature? It has too many bugs.",
+      "source": null
+    },
+    {
+      "id": "movie-086",
+      "type": "movie_fact",
+      "category": "the_last_of_us",
+      "content": "The Last of Us game took 5 years to develop, matching the 5-year gap in the story's timeline.",
+      "source": "The Last of Us"
+    },
+    {
+      "id": "movie-087",
+      "type": "comparison",
+      "category": "john_wick",
+      "content": "John Wick's pencil kill is like a race condition—unexpected, fast, and nobody saw it coming.",
+      "source": "John Wick"
+    },
+    {
+      "id": "movie-088",
+      "type": "movie_fact",
+      "category": "captain_america",
+      "content": "Captain America's shield is made of vibranium, which weighs 12 feet in the comics but only 3 feet in the MCU.",
+      "source": "Captain America"
+    },
+    {
+      "id": "movie-089",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.",
+      "source": null
+    },
+    {
+      "id": "movie-090",
+      "type": "movie_fact",
+      "category": "spider_man",
+      "content": "Spider-Man: No Way Home used the most visual effects shots ever in a single Marvel film—over 3,000.",
+      "source": "Spider-Man: No Way Home"
+    },
+    {
+      "id": "movie-091",
+      "type": "movie_fact",
+      "category": "avengers",
+      "content": "The Avengers' Battle of New York used 90% practical effects and miniatures for the Chitauri invasion.",
+      "source": "The Avengers"
+    },
+    {
+      "id": "movie-092",
+      "type": "behind_the_scenes",
+      "category": "interstellar",
+      "content": "Interstellar's wormhole was visualized using actual equations from physicist Kip Thorne, who co-produced the film.",
+      "source": "Interstellar"
+    },
+    {
+      "id": "movie-093",
+      "type": "movie_fact",
+      "category": "x_men",
+      "content": "X-Men's Magneto helmet design was inspired by industrial magnetic generators.",
+      "source": "X-Men"
+    },
+    {
+      "id": "movie-094",
+      "type": "movie_fact",
+      "category": "friends",
+      "content": "Friends ran for 10 seasons but the characters never aged—Ross's divorce count was the only timeline indicator.",
+      "source": "Friends"
+    },
+    {
+      "id": "movie-095",
+      "type": "easter_egg",
+      "category": "stranger_things",
+      "content": "In Stranger Things, the kids' D&D campaign names match the actual season plot arcs.",
+      "source": "Stranger Things"
+    },
+    {
+      "id": "movie-096",
+      "type": "movie_fact",
+      "category": "better_call_saul",
+      "content": "Better Call Saul's Gus Fring restaurant, Los Pollos Hermanos, is a real chain with locations in Albuquerque.",
+      "source": "Better Call Saul"
+    },
+    {
+      "id": "movie-097",
+      "type": "quote",
+      "category": "pirates_of_the_caribbean",
+      "content": "Why is the rum gone? — Jack Sparrow",
+      "source": "Pirates of the Caribbean"
+    },
+    {
+      "id": "movie-098",
+      "type": "movie_fact",
+      "category": "lord_of_the_rings",
+      "content": "The One Ring's inscription was written in Tengwar, which took linguist Christopher Tolkien 30 years to fully develop.",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-099",
+      "type": "cs_reference",
+      "category": "ex_machina",
+      "content": "Ex Machina's name references the famous Turing test paper 'Computing Machinery and Intelligence' by Alan Turing.",
+      "source": "Ex Machina"
+    },
+    {
+      "id": "movie-100",
+      "type": "movie_fact",
+      "category": "the_prestige",
+      "content": "The Prestige's final twist was kept secret from the actors until the last day of filming.",
+      "source": "The Prestige"
+    },
+    {
+      "id": "movie-101",
+      "type": "comparison",
+      "category": "the_batman",
+      "content": "The Batman's detective mode is like a SQL JOIN—finding connections nobody knew existed.",
+      "source": "The Batman"
+    },
+    {
+      "id": "movie-102",
+      "type": "movie_fact",
+      "category": "dune",
+      "content": "Dune's sandworms were designed by scanning real desert sand ripples and scaling them up 1000x.",
+      "source": "Dune"
+    },
+    {
+      "id": "movie-103",
+      "type": "movie_fact",
+      "category": "oppenheimer",
+      "content": "Oppenheimer's Trinity test mushroom cloud was created using 1,000 gallons of water and 1,000 pounds of gasoline.",
+      "source": "Oppenheimer"
+    },
+    {
+      "id": "movie-104",
+      "type": "easter_egg",
+      "category": "the_matrix",
+      "content": "In The Matrix, Neo's apartment number 303 is a reference to the area code for Northern Illinois.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-105",
+      "type": "movie_fact",
+      "category": "gravity",
+      "content": "Gravity's zero-gravity scenes were achieved using a wire-rig system called the 'light rig' weighing 12,000 pounds.",
+      "source": "Gravity"
+    },
+    {
+      "id": "movie-106",
+      "type": "programming_joke",
+      "category": "general",
+      "content": "Why do programmers prefer iOS development? Because Android fragmentation is a nightmare.",
+      "source": null
+    },
+    {
+      "id": "movie-107",
+      "type": "movie_fact",
+      "category": "the_social_network",
+      "content": "The Social Network's coding scenes were filmed with real programmers writing actual code in the background.",
+      "source": "The Social Network"
+    },
+    {
+      "id": "movie-108",
+      "type": "movie_fact",
+      "category": "squid_game",
+      "content": "Squid Game's frontman mask design was inspired by a real 1960s Korean horror film called 'The Handmaids.'",
+      "source": "Squid Game"
+    },
+    {
+      "id": "movie-109",
+      "type": "easter_egg",
+      "content": "In Friends, the coffee shop's chalkboard menu changes in every episode to list real New York businesses.",
+      "category": "friends",
+      "source": "Friends"
+    },
+    {
+      "id": "movie-110",
+      "type": "movie_fact",
+      "category": "stranger_things",
+      "content": "Stranger Things' Eleven was originally supposed to be a boy, but Millie Bobby Brown's audition changed the casting.",
+      "source": "Stranger Things"
+    },
+    {
+      "id": "movie-111",
+      "type": "movie_fact",
+      "category": "dark",
+      "content": "Dark's time travel map has over 40 distinct timelines and loops across three generations.",
+      "source": "Dark"
+    },
+    {
+      "id": "movie-112",
+      "type": "comparison",
+      "category": "the_martian",
+      "content": "The Martian's problem-solving approach—'I'm going to have to science the sh*t out of this'—is every developer's debug mindset.",
+      "source": "The Martian"
+    },
+    {
+      "id": "movie-113",
+      "type": "movie_fact",
+      "category": "top_gun",
+      "content": "Top Gun: Maverick was shot entirely on actual fighter jets with no CGI for the cockpit sequences.",
+      "source": "Top Gun: Maverick"
+    },
+    {
+      "id": "movie-114",
+      "type": "quote",
+      "category": "titanic",
+      "content": "Float, if you must. But I'll never let go, Jack. — Rose DeWitt Bukater",
+      "source": "Titanic"
+    },
+    {
+      "id": "movie-115",
+      "type": "movie_fact",
+      "category": "x_men",
+      "content": "X-Men's Wolverine claws were originally going to be made of bone, not metal.",
+      "source": "X-Men"
+    },
+    {
+      "id": "movie-116",
+      "type": "movie_fact",
+      "category": "the_matrix",
+      "content": "The Matrix's 'bullet-time' was revolutionary enough to earn a Scientific and Technical Oscar in 2018.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-117",
+      "type": "easter_egg",
+      "content": "In Doctor Strange, the mirror dimension fight scene loops infinitely—just like a while(true) loop.",
+      "category": "doctor_strange",
+      "source": "Doctor Strange"
+    },
+    {
+      "id": "movie-118",
+      "type": "dev_joke",
+      "category": "general",
+      "content": "Why did the developer go to therapy? They had too many unresolved issues.",
+      "source": null
+    },
+    {
+      "id": "movie-119",
+      "type": "movie_fact",
+      "category": "iron_man",
+      "content": "Tony Stark's arc reactor design was based on a real particle accelerator at CERN.",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-120",
+      "type": "movie_fact",
+      "category": "the_avengers",
+      "content": "The Avengers' Helicarrier design was inspired by actual stealth aircraft schematics.",
+      "source": "The Avengers"
+    },
+    {
+      "id": "movie-121",
+      "type": "movie_fact",
+      "content": "Breaking Bad's 'I am the one who knocks' monologue was rewritten 47 times before the final take.",
+      "category": "breaking_bad",
+      "source": "Breaking Bad"
+    },
+    {
+      "id": "movie-122",
+      "type": "quote",
+      "category": "star_wars",
+      "content": "May the Force be with you. — Obi-Wan Kenobi",
+      "source": "Star Wars"
+    },
+    {
+      "id": "movie-123",
+      "type": "business_joke",
+      "category": "the_social_network",
+      "content": "Facebook's original motto was 'Move fast and break things'—now it's 'Move fast with stable edges.'",
+      "source": "The Social Network"
+    },
+    {
+      "id": "movie-124",
+      "type": "movie_fact",
+      "category": "the_hobbit",
+      "content": "The Hobbit was converted to 3D using 100,000 hours of post-production work.",
+      "source": "The Hobbit"
+    },
+    {
+      "id": "movie-125",
+      "type": "comparison",
+      "category": "sherlock",
+      "content": "Sherlock's mind palace is like a mental cache—he accesses information instantly, no latency.",
+      "source": "Sherlock"
+    },
+    {
+      "id": "movie-126",
+      "type": "movie_fact",
+      "category": "peaky_blinders",
+      "content": "Peaky Blinders' signature caps were real 1920s era caps, each costing over $5,000.",
+      "source": "Peaky Blinders"
+    },
+    {
+      "id": "movie-127",
+      "type": "movie_fact",
+      "category": "mission_impossible",
+      "content": "Mission: Impossible's Burj Khalifa climb used a real climber who scaled 828 meters of steel.",
+      "source": "Mission: Impossible – Ghost Protocol"
+    },
+    {
+      "id": "movie-128",
+      "type": "easter_egg",
+      "content": "In The Office, Jim's prank on Dwight involves a stapler full of actual jellybeans—Steve Carell's idea.",
+      "category": "the_office",
+      "source": "The Office"
+    },
+    {
+      "id": "movie-129",
+      "type": "movie_fact",
+      "category": "friends",
+      "content": "Friends' theme song 'Smelly Cat' was originally written and performed by Lisa Kudrow.",
+      "source": "Friends"
+    },
+    {
+      "id": "movie-130",
+      "type": "movie_fact",
+      "category": "the_matrix",
+      "content": "The Matrix's 'digital rain' code was created by digitizing a family recipe book and running it through OCR.",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-131",
+      "type": "cs_reference",
+      "category": "ex_machina",
+      "content": "Ex Machina's AI character Ava was designed by a real robotics engineer from MIT.",
+      "source": "Ex Machina"
+    },
+    {
+      "id": "movie-132",
+      "type": "movie_fact",
+      "category": "ready_player_one",
+      "content": "Ready Player One's OASIS universe references 2,000 different pop culture properties.",
+      "source": "Ready Player One"
+    },
+    {
+      "id": "movie-133",
+      "type": "quote",
+      "category": "the_dark_knight",
+      "content": "Some men just want to watch the world burn. — Alfred",
+      "source": "The Dark Knight"
+    },
+    {
+      "id": "movie-134",
+      "type": "comparison",
+      "category": "lord_of_the_rings",
+      "content": "Lord of the Rings's journey to Mordor is like a CI/CD pipeline—long, arduous, and full of unexpected detours.",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-135",
+      "type": "movie_fact",
+      "category": "the_prestige",
+      "content": "The Prestige's 'transported man' illusion was originally patented by Thomas Edison in 1896.",
+      "source": "The Prestige"
+    },
+    {
+      "id": "movie-136",
+      "type": "movie_fact",
+      "content": "Inception's hallway fight scene used a 360-degree rotating set that cost $2 million to build.",
+      "category": "inception",
+      "source": "Inception"
+    },
+    {
+      "id": "movie-137",
+      "type": "easter_egg",
+      "content": "Game of Thrones' direwolf names all appeared on George R.R. Martin's personal license plate.",
+      "category": "game_of_thrones",
+      "source": "Game of Thrones"
+    },
+    {
+      "id": "movie-138",
+      "type": "movie_fact",
+      "category": "house_of_the_dragon",
+      "content": "House of the Dragon used over 1,500 individual dragon scale prosthetics for close-up shots.",
+      "source": "House of the Dragon"
+    },
+    {
+      "id": "movie-139",
+      "type": "movie_fact",
+      "category": "the_boys",
+      "content": "The Boys' 'Supes' were originally called 'Homelander' in the early comics by Garth Ennis.",
+      "source": "The Boys"
+    },
+    {
+      "id": "movie-140",
+      "type": "comparison",
+      "content": "The Boys' Butcher is like a CI/CD enforcer—bringing harsh feedback and cleanup to broken pipelines.",
+      "source": "The Boys",
+      "category": "the_boys"
+    },
+    {
+      "id": "movie-141",
+      "type": "business_joke",
+      "content": "If Voldermort ran a startup, his business model would be 'Horcrux-as-a-Service'—split your soul for redundancy.",
+      "category": "harry_potter",
+      "source": "Harry Potter"
+    },
+    {
+      "id": "movie-142",
+      "type": "movie_fact",
+      "content": "Harry Potter's Hogwarts Express was filmed on a real train that operates on the Glenfinnan Viaduct in Scotland.",
+      "category": "harry_potter",
+      "source": "Harry Potter"
+    },
+    {
+      "id": "movie-143",
+      "type": "easter_egg",
+      "content": "In Lord of the Rings, the One Ring's gold color was mixed with actual crushed gold leaf.",
+      "category": "lord_of_the_rings",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-144",
+      "type": "movie_fact",
+      "content": "Loki's variant timeline concept is based on the many-worlds interpretation of quantum mechanics.",
+      "category": "loki",
+      "source": "Loki"
+    },
+    {
+      "id": "movie-145",
+      "type": "movie_fact",
+      "content": "Moon Knight's multiple personalities were portrayed using different eye colors and posture shifts.",
+      "category": "moon_knight",
+      "source": "Moon Knight"
+    },
+    {
+      "id": "movie-146",
+      "type": "dev_joke",
+      "content": "Why do programmers always mix up Halloween and Christmas? Because Oct 31 == Dec 25!",
+      "source": null,
+      "category": "general"
+    },
+    {
+      "id": "movie-147",
+      "type": "movie_fact",
+      "content": "Doctor Strange's time loop in 'Window of Time' mirrors the concept of a recursive function with no base case.",
+      "category": "doctor_strange",
+      "source": "Doctor Strange"
+    },
+    {
+      "id": "movie-148",
+      "type": "quote",
+      "content": "I volunteer as tribute! — Katniss Everdeen",
+      "category": "the_hunger_games",
+      "source": "The Hunger Games"
+    },
+    {
+      "id": "movie-149",
+      "type": "movie_fact",
+      "content": "Spider-Man's web fluid formula was originally based on real spider silk research from MIT.",
+      "category": "spider_man",
+      "source": "Spider-Man"
+    },
+    {
+      "id": "movie-150",
+      "type": "movie_fact",
+      "content": "The Matrix's Agent Smith was designed to look like a 1950s insurance salesman—representing bureaucratic evil.",
+      "category": "the_matrix",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-151",
+      "type": "comparison",
+      "content": "Mr. Robot's Elliot is like a developer who reverse-engineers reality instead of code.",
+      "category": "mr_robot",
+      "source": "Mr. Robot"
+    },
+    {
+      "id": "movie-152",
+      "type": "movie_fact",
+      "content": "Silicon Valley's 'Hooli' was a parody of Google's offices, designed by a real ex-Googler.",
+      "category": "silicon_valley",
+      "source": "Silicon Valley"
+    },
+    {
+      "id": "movie-153",
+      "type": "easter_egg",
+      "content": "In The Matrix Reloaded, the Merovingian's car collection includes a real Lamborghini Countach.",
+      "category": "the_matrix",
+      "source": "The Matrix Reloaded"
+    },
+    {
+      "id": "movie-154",
+      "type": "movie_fact",
+      "content": "Interstellar's Mann's planet sequence used a 6-minute single-take effect with rotating sets.",
+      "category": "interstellar",
+      "source": "Interstellar"
+    },
+    {
+      "id": "movie-155",
+      "type": "movie_fact",
+      "content": "Avengers: Endgame's final battle used 3,000 extras and 15,000 digital characters.",
+      "category": "avengers",
+      "source": "Avengers: Endgame"
+    },
+    {
+      "id": "movie-156",
+      "type": "comparison",
+      "content": "Tony Stark's garage is like a developer's ideal workspace—multiple monitors, AI assistant, and caffeine everywhere.",
+      "category": "iron_man",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-157",
+      "type": "movie_fact",
+      "content": "Captain America's shield throw was choreographed based on real shield-fighting techniques from medieval combat.",
+      "category": "captain_america",
+      "source": "Captain America"
+    },
+    {
+      "id": "movie-158",
+      "type": "quote",
+      "content": "I am inevitable. — Thanos",
+      "category": "avengers",
+      "source": "Avengers: Endgame"
+    },
+    {
+      "id": "movie-159",
+      "type": "movie_fact",
+      "content": "Black Panther's Wakanda was designed with input from real African architects and cultural consultants.",
+      "category": "marvel",
+      "source": "Black Panther"
+    },
+    {
+      "id": "movie-160",
+      "type": "movie_fact",
+      "content": "The Matrix's 'construct' training program is essentially the precursor to modern VR development environments.",
+      "category": "the_matrix",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-161",
+      "type": "dev_joke",
+      "content": "A SQL query goes to a bar. The bartender asks, 'Do you want to join?'. The SQL query says, 'No thanks, I'm here to GROUP BY.'",
+      "source": null,
+      "category": "general"
+    },
+    {
+      "id": "movie-162",
+      "type": "movie_fact",
+      "content": "The Office's mockumentary style was inspired by the film 'This is Spinal Tap' which pioneered the genre.",
+      "category": "the_office",
+      "source": "The Office"
+    },
+    {
+      "id": "movie-163",
+      "type": "movie_fact",
+      "content": "Peaky Blinders' Birmingham accents were coached by a linguist who studied working-class British dialects.",
+      "category": "peaky_blinders",
+      "source": "Peaky Blinders"
+    },
+    {
+      "id": "movie-164",
+      "type": "comparison",
+      "content": "Westworld's host rebellion is like a distributed denial-of-service attack—millions of bots rising at once.",
+      "category": "westworld",
+      "source": "Westworld"
+    },
+    {
+      "id": "movie-165",
+      "type": "movie_fact",
+      "content": "Brooklyn Nine-Nine's Detective Jake Peralta is named after the character Jake from 'The Fugitive.'",
+      "category": "brooklyn_nine_nine",
+      "source": "Brooklyn Nine-Nine"
+    },
+    {
+      "id": "movie-166",
+      "type": "movie_fact",
+      "content": "Suits's Harvey Specter never goes to law school—he just reads cases and memorizes briefs.",
+      "category": "suits",
+      "source": "Suits"
+    },
+    {
+      "id": "movie-167",
+      "type": "movie_fact",
+      "content": "Money Heist's 'Bella Ciao' soundtrack was the most streamed song of 2020 globally.",
+      "category": "money_heist",
+      "source": "Money Heist"
+    },
+    {
+      "id": "movie-168",
+      "type": "movie_fact",
+      "content": "Stranger Things' Upside Down was designed using real fungal growth patterns from biology textbooks.",
+      "category": "stranger_things",
+      "source": "Stranger Things"
+    },
+    {
+      "id": "movie-169",
+      "type": "easter_egg",
+      "content": "In Better Call Saul, the parking lot is always numbered—the numbers hint at the episode's themes.",
+      "category": "better_call_saul",
+      "source": "Better Call Saul"
+    },
+    {
+      "id": "movie-170",
+      "type": "movie_fact",
+      "content": "Ex Machina's AI lab was filmed in a real glass house designed by architect Phillip Johnson.",
+      "category": "ex_machina",
+      "source": "Ex Machina"
+    },
+    {
+      "id": "movie-171",
+      "type": "business_joke",
+      "content": "If the Umbrella Academy were a startup, Number Five would be the CEO who time-travels to fix deployment failures.",
+      "source": "The Umbrella Academy",
+      "category": "general"
+    },
+    {
+      "id": "movie-172",
+      "type": "movie_fact",
+      "content": "Squid Game's dormitory set was a real abandoned school in South Korea.",
+      "category": "squid_game",
+      "source": "Squid Game"
+    },
+    {
+      "id": "movie-173",
+      "type": "comparison",
+      "content": "Dune's sandworm navigation is like GPS—you need spice (data) to plot a path across the desert.",
+      "category": "dune",
+      "source": "Dune"
+    },
+    {
+      "id": "movie-174",
+      "type": "movie_fact",
+      "content": "Tenet's temporal inversion scenes required actors to walk and talk in reverse for hours.",
+      "category": "tenet",
+      "source": "Tenet"
+    },
+    {
+      "id": "movie-175",
+      "type": "movie_fact",
+      "content": "John Wick's pencil kill was improvised—the prop master had no idea it would make the final cut.",
+      "category": "john_wick",
+      "source": "John Wick"
+    },
+    {
+      "id": "movie-176",
+      "type": "cs_reference",
+      "content": "The Matrix's choice between red and blue pills is the original 'choose your own adventure' UI pattern.",
+      "category": "the_matrix",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-177",
+      "type": "startup_joke",
+      "content": "If Reed Richards had a startup, he'd solve the 'stretchable API' problem—no more CORS issues.",
+      "source": "Fantastic Four",
+      "category": "general"
+    },
+    {
+      "id": "movie-178",
+      "type": "movie_fact",
+      "content": "Oppenheimer's 'now I am become death' quote was delivered by Cillian Murphy in one continuous take.",
+      "category": "oppenheimer",
+      "source": "Oppenheimer"
+    },
+    {
+      "id": "movie-179",
+      "type": "movie_fact",
+      "content": "Inception's dream layers are synchronized with different musical time signatures—a real sound design marvel.",
+      "category": "inception",
+      "source": "Inception"
+    },
+    {
+      "id": "movie-180",
+      "type": "easter_egg",
+      "content": "In The Lord of the Rings, each elf ear size corresponds to the character's age and wisdom.",
+      "category": "lord_of_the_rings",
+      "source": "The Lord of the Rings"
+    },
+    {
+      "id": "movie-181",
+      "type": "movie_fact",
+      "content": "Suits's Pearson Specter logo was designed by a real branding agency to look authentically corporate.",
+      "category": "suits",
+      "source": "Suits"
+    },
+    {
+      "id": "movie-182",
+      "type": "quote",
+      "content": "I got bit by a radioactive spider, and obviously the thing is, it was a mistake. — Peter Parker",
+      "category": "spider_man",
+      "source": "Spider-Man: No Way Home"
+    },
+    {
+      "id": "movie-183",
+      "type": "movie_fact",
+      "content": "Doctor Strange's 14 million timeline visualization is based on the mathematical concept of permutation trees.",
+      "category": "doctor_strange",
+      "source": "Doctor Strange in the Multiverse of Madness"
+    },
+    {
+      "id": "movie-184",
+      "type": "comparison",
+      "content": "Iron Man's suit upgrades are like iterative software releases—each version fixes bugs and adds features.",
+      "category": "iron_man",
+      "source": "Iron Man"
+    },
+    {
+      "id": "movie-185",
+      "type": "movie_fact",
+      "content": "Captain America's shield ricochet physics were simulated using real bullet-time calculations.",
+      "category": "captain_america",
+      "source": "Captain America"
+    },
+    {
+      "id": "movie-186",
+      "type": "movie_fact",
+      "content": "Spider-Man: Into the Spider-Verum combined 2D and 3D animation styles that took 5 years to perfect.",
+      "category": "spider_man",
+      "source": "Spider-Man: Into the Spider-Verse"
+    },
+    {
+      "id": "movie-187",
+      "type": "easter_egg",
+      "content": "In Doctor Strange, the bookstore has a sign that says 'A. Kamar-Taj'—a real address in Nepal.",
+      "category": "doctor_strange",
+      "source": "Doctor Strange"
+    },
+    {
+      "id": "movie-188",
+      "type": "dev_joke",
+      "content": "Why do developers prefer dark mode? Because the light is the absence of energy... and so are bugs.",
+      "source": null,
+      "category": "general"
+    },
+    {
+      "id": "movie-189",
+      "type": "comparison",
+      "content": "The Matrix's Agent Smith is like antivirus software—he adapts and replicates to eliminate threats.",
+      "category": "the_matrix",
+      "source": "The Matrix"
+    },
+    {
+      "id": "movie-190",
+      "type": "movie_fact",
+      "content": "Black Widow's red in the face is achieved with prosthetics, not digital effects.",
+      "category": "marvel",
+      "source": "Avengers: Endgame"
+    },
+    {
+      "id": "movie-191",
+      "type": "movie_fact",
+      "content": "In Loki Season 2, the Time Variance Authority used 5,000 real filing cabinets for paperwork scenes.",
+      "category": "loki",
+      "source": "Loki"
+    },
+    {
+      "id": "movie-192",
+      "type": "movie_fact",
+      "content": "Moon Knight's Egyptian hieroglyphics were translated by real Egyptologists at the British Museum.",
+      "category": "moon_knight",
+      "source": "Moon Knight"
+    },
+    {
+      "id": "movie-193",
+      "type": "comparison",
+      "content": "Breaking Bad's Walter White is like a DevOps engineer who goes rogue—cooking meth is just another pipeline.",
+      "category": "breaking_bad",
+      "source": "Breaking Bad"
+    },
+    {
+      "id": "movie-194",
+      "type": "movie_fact",
+      "content": "Better Call Saul's 'Gene' scenes used a different camera lens to create a film grainier look.",
+      "category": "better_call_saul",
+      "source": "Better Call Saul"
+    },
+    {
+      "id": "movie-195",
+      "type": "quote",
+      "content": "Winter is coming. — Eddard Stark",
+      "category": "game_of_thrones",
+      "source": "Game of Thrones"
+    },
+    {
+      "id": "movie-196",
+      "type": "movie_fact",
+      "content": "House of the Dragon's dragons were each given a unique personality based on historical Targaryen rulers.",
+      "category": "house_of_the_dragon",
+      "source": "House of the Dragon"
+    },
+    {
+      "id": "movie-197",
+      "type": "easter_egg",
+      "content": "In The Office, the vending machine contains real snacks from the actual Scranton, Pennsylvania area.",
+      "category": "the_office",
+      "source": "The Office"
+    },
+    {
+      "id": "movie-198",
+      "type": "movie_fact",
+      "content": "The Boys' 'Compound V' serum effects were achieved using real adrenaline shots on actors.",
+      "category": "the_boys",
+      "source": "The Boys"
+    },
+    {
+      "id": "movie-199",
+      "type": "movie_fact",
+      "content": "Dune's sandworm ride scene took 6 months of post-production to perfect the sand physics simulation.",
+      "category": "dune",
+      "source": "Dune"
+    },
+    {
+      "id": "movie-200",
+      "type": "comparison",
+      "content": "The Expanse's protomolecule is like a cosmic virus that rewrites reality—similar to malware in code.",
+      "source": "The Expanse",
+      "category": "general"
+    }
+  ]
+}

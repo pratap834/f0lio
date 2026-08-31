@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-primary">
+    <section id="about" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,24 +35,34 @@ export default function About() {
           >
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
-                I&apos;m <span className="text-accent font-semibold">Pratap</span>, a <span className="text-accent font-semibold">Machine Learning Engineer</span> and{' '}
-                <span className="text-accent font-semibold">AI Researcher</span> specializing in deep learning, NLP, and computer vision.
+                I&apos;m <span className="text-accent font-semibold">Pratap</span>, an <span className="text-accent font-semibold">AI Engineer</span> and{' '}
+                <span className="text-accent font-semibold">Machine Learning Specialist</span> specializing in deep learning, multimodal vision systems, and generative AI.
               </p>
               <p>
-                I build production-ready ML models and scalable MLOps pipelines that deliver exceptional accuracy and performance in real-world applications.
+                My experience spans applied ML research with <span className="text-text-primary font-medium">Vision Transformers (ViT) &amp; CNNs</span> at <span className="text-accent font-medium">Titan Company Ltd</span>, architecting visual search pipelines with <span className="text-text-primary font-medium">FAISS &amp; DINOv2</span>, and developing robust backend inference services using <span className="text-text-primary font-medium">FastAPI and Python</span>.
               </p>
               <p>
-                When I&apos;m not coding, I&apos;m exploring new technologies, contributing to
-                open-source, or sharing knowledge with the developer community.
+                Whether designing high-accuracy classification architectures, deploying vector retrieval engines, or building automated ETL workflows, I focus on delivering scalable, production-ready AI solutions.
               </p>
             </div>
 
-            <Link
-              href="/about"
-              className="inline-block px-6 py-3 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition-all duration-300 font-semibold"
-            >
-              Learn More About Me →
-            </Link>
+            {/* Quick Skill Tags */}
+            <div className="flex flex-wrap gap-2 pt-2">
+              {['PyTorch', 'TensorFlow', 'Vision Transformers', 'FAISS', 'LLMs & GenAI', 'FastAPI', 'Python'].map((item) => (
+                <span key={item} className="px-3 py-1 text-xs rounded-lg bg-secondary border border-accent/20 text-accent">
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            <div className="pt-2">
+              <Link
+                href="/about"
+                className="inline-block px-6 py-3 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition-all duration-300 font-semibold shadow-[0_0_15px_rgba(0,173,181,0.15)]"
+              >
+                Learn More &amp; View Technical Skills →
+              </Link>
+            </div>
           </motion.div>
 
           {/* Profile Picture */}

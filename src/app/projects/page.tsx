@@ -110,12 +110,10 @@ export default function ProjectsPage() {
           className="text-center mb-12"
         >
           <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            My <span className="text-accent">Projects</span>
+            AI &amp; Engineering <span className="text-accent">Projects</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            A collection of my work showcasing various technologies and solutions
-            <br />
-            <span className="text-sm text-accent">Auto-synced with GitHub • Updates hourly</span>
+            A portfolio of deep learning architectures, multimodal vision systems, LLM tools, and full-stack platforms
           </p>
         </motion.div>
 

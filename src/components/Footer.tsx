@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Icon from './ui/Icon';
 import { SITE_CONFIG } from '@/lib/constants';
+import MovieFacts from './MovieFacts';
 
 export default function Footer() {
   const socialLinks = [
@@ -15,9 +16,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative border-t border-secondary bg-primary">
+    <footer className="relative border-t border-secondary">
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
-      
+
       <div className="container mx-auto px-6 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
@@ -32,7 +33,7 @@ export default function Footer() {
               </motion.div>
             </Link>
             <p className="text-text-secondary text-sm">
-              Building innovative digital experiences
+              AI Engineer &amp; Machine Learning Specialist
             </p>
           </div>
 
@@ -60,9 +61,14 @@ export default function Footer() {
               © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
             </p>
             <p className="text-text-secondary text-xs mt-1">
-              Built with Next.js & Three.js
+              Engineered with Next.js, TypeScript &amp; Framer Motion
             </p>
           </div>
+        </div>
+
+        {/* Movie Facts Section */}
+        <div className="border-t border-accent/10 mt-6 pt-4">
+          <MovieFacts />
         </div>
       </div>
     </footer>

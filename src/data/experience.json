@@ -1,7 +1,24 @@
 [
   {
+    "id": "exp-2",
+    "role": "ML Research & Software Engineering Intern",
+    "company": "Titan Company Ltd",
+    "companyUrl": "https://www.titan.co.in",
+    "location": "Bengaluru, India",
+    "startDate": "2024-06",
+    "endDate": "2024-07",
+    "current": false,
+    "description": [
+      "Contributed to applied ML research on Vision Transformers (ViT) and CNN architectures, evaluating scalable visual feature extraction and inference strategies for retail analytics.",
+      "Engineered an automated Python-based store locator data pipeline and ETL extraction process, eliminating time-consuming manual workflows.",
+      "Optimized SQL query performance and data reporting accuracy across Tanishq Jewelry's enterprise data systems by resolving query bottlenecks.",
+      "Authored Business Requirements (BRD) and Technical Specification Documents (TSD) for limit automation, aligning engineering workflows with business analytics."
+    ],
+    "technologies": ["Python", "Vision Transformers", "CNNs", "SQL", "Data Pipelines", "ML Research", "PyTorch"]
+  },
+  {
     "id": "exp-1",
-    "role": "Full Stack Developer (Freelance)",
+    "role": "AI & Full Stack Engineer (Freelance)",
     "company": "Playlit",
     "companyUrl": "https://playlit.com",
     "location": "Remote",
@@ -9,75 +26,57 @@
     "endDate": "Present",
     "current": true,
     "description": [
-      "Designed a data-centric music platform with authentication, artist analytics, and structured content uploads.",
-      "Developed role-based dashboards to support internal performance monitoring and management.",
-      "Designed and managed a waitlist system that captures user interaction metrics from more than 400+ users.",
-      "Architected scalable back-end infrastructure for reliable data handling and user behavior tracking."
+      "Architected a data-centric music platform with authentication, artist analytics, and structured audio content processing.",
+      "Engineered role-based analytics dashboards supporting real-time performance tracking and metric visualization.",
+      "Designed and managed a scalable user interaction tracking system capturing engagement metrics from 400+ active users.",
+      "Built resilient backend services with serverless PostgreSQL (Neon) for high-throughput data ingestion and low-latency response times."
     ],
-    "technologies": ["Next.js", "Neon DB", "Clerk Auth", "Cloudinary"]
+    "technologies": ["Next.js", "Python", "Neon PostgreSQL", "Clerk Auth", "Cloudinary", "Data Analytics"]
   },
   {
-    "id": "exp-2",
-    "role": "SDE Intern",
-    "company": "Titan Company Ltd",
-    "companyUrl": "https://www.titan.co.in",
-    "location": "Bengaluru",
-    "startDate": "2024-06",
-    "endDate": "2024-07",
+    "id": "exp-5",
+    "role": "ML Research & Core Technical Member",
+    "company": "Machine Learning Club",
+    "companyUrl": "",
+    "location": "VIT-AP",
+    "startDate": "2022-01",
+    "endDate": "2023-12",
     "current": false,
     "description": [
-      "Improved SQL query performance and reporting precision for Tanishq Jewelry's data systems by identifying and resolving bottlenecks.",
-      "Built a Python-based store locator data pipeline, replacing time-consuming manual lookup with automated data extraction.",
-      "Authored Business Requirements and Technical Specification Documents for a limit automation initiative, aligning output with analyst expectations.",
-      "Collaborated with business analysts to document workflows, schema mappings, and process automations for technical reporting.",
-      "Contributed to internal ML research on Vision Transformers and CNNs, focusing on scalable inference strategies for analytics solutions."
+      "Built and validated end-to-end Machine Learning pipelines, focusing on data preprocessing, feature engineering, and model evaluation metrics.",
+      "Conducted technical peer reviews and hands-on sessions on Deep Learning architectures, PyTorch, and NLP/Vision models.",
+      "Mentored student teams in structured dataset curation, hyperparameter tuning, and reproducible experimental workflows."
     ],
-    "technologies": ["Python", "SQL", "Vision Transformers", "CNN", "Data Pipeline", "ML Research"]
+    "technologies": ["PyTorch", "TensorFlow", "Scikit-learn", "Deep Learning", "Computer Vision", "NLP"]
   },
   {
     "id": "exp-4",
     "role": "Tech Python Co-Lead",
     "company": "NextGen Cloud",
     "companyUrl": "",
-    "location": "",
+    "location": "VIT-AP",
     "startDate": "2023-01",
     "endDate": "2024-12",
     "current": false,
     "description": [
-      "Built an e-commerce system emphasizing transactional data flow and user data management.",
-      "Provided hands-on sessions on back-end analytics, performance debugging, and query optimization."
+      "Architected backend data workflows and transaction processing pipelines for web systems.",
+      "Led hands-on technical workshops on Python programming, backend analytics, database query optimization, and performance debugging."
     ],
-    "technologies": ["Python", "E-commerce", "Backend", "Data Management", "Analytics"]
+    "technologies": ["Python", "FastAPI", "SQL", "Data Pipelines", "Performance Optimization"]
   },
   {
     "id": "exp-3",
     "role": "Technical Team Lead",
     "company": "NULL Chapter Vijayawada",
     "companyUrl": "",
-    "location": "Vijayawada",
+    "location": "Vijayawada, India",
     "startDate": "2023-01",
     "endDate": "Present",
     "current": true,
     "description": [
-      "Designed Capture the Flag (CTF) problems focused on reverse engineering and data handling for technical competitions.",
-      "Facilitated workshops on data security, analytics, and vulnerability assessment.",
-      "Mentored members in structured problem-solving and investigative analysis techniques."
+      "Designed algorithmic challenges and Capture the Flag (CTF) problem sets focusing on reverse engineering, cryptography, and data security.",
+      "Organized workshops on data security, vulnerability assessment, and adversarial problem solving for 100+ attendees."
     ],
-    "technologies": ["Cybersecurity", "CTF", "Reverse Engineering", "Data Security"]
-  },
-  {
-    "id": "exp-5",
-    "role": "Content Team Member",
-    "company": "Machine Learning Club",
-    "companyUrl": "",
-    "location": "",
-    "startDate": "2022-01",
-    "endDate": "2023-12",
-    "current": false,
-    "description": [
-      "Participated in data preprocessing, model evaluation, and reporting accuracy for ML-based student projects.",
-      "Organized peer review sessions to improve analytical approaches and data storytelling."
-    ],
-    "technologies": ["Machine Learning", "Data Preprocessing", "Model Evaluation", "Python"]
+    "technologies": ["Python", "Data Security", "Reverse Engineering", "Vulnerability Analysis", "Algorithmic Problem Solving"]
   }
 ]

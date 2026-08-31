@@ -11,7 +11,7 @@ export default function Experience() {
   const recentExperience = experienceData.slice(0, 2);
 
   return (
-    <section id="experience" className="py-20 bg-primary">
+    <section id="experience" className="py-20">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -24,7 +24,7 @@ export default function Experience() {
             Work <span className="text-accent">Experience</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            My professional journey
+            Practical AI engineering, deep learning research, and data pipeline experience
           </p>
         </motion.div>
 

@@ -10,6 +10,9 @@ export interface Project {
   github?: string;
   category?: string;
   featured?: boolean;
+  keyFeatures?: string[];
+  tags?: string[];
+  status?: string;
 }
 
 export interface Experience {
@@ -28,7 +31,7 @@ export interface Experience {
 export interface Skill {
   id: string;
   name: string;
-  category: 'frontend' | 'backend' | 'tools' | 'other';
+  category: 'ai_ml' | 'data_science' | 'backend' | 'cloud_mlops' | 'tools' | 'frontend' | 'other';
   proficiency?: number;
   icon?: string;
 }
@@ -44,4 +47,12 @@ export interface ContactFormData {
   email: string;
   subject: string;
   message: string;
+}
+
+export interface MovieFact {
+  id: string;
+  type: string;
+  category: string;
+  content: string;
+  source?: string;
 }
