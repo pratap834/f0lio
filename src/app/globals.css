@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --bg-primary: #0D0D0D;
-  --bg-secondary: #1A1A1A;
+  --bg-primary: #09090b;
+  --bg-secondary: #121215;
+  --bg-surface: #18181b;
   --accent: #00ADB5;
-  --text-primary: #EEEEEE;
-  --text-secondary: #B0B0B0;
-  --border-glow: rgba(0, 173, 181, 0.3);
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -31,22 +33,23 @@ body {
   color: var(--text-primary);
 }
 
-/* Custom scrollbar */
+/* Custom minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-primary);
+  background: #09090b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 4px;
+  background: #27272a;
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00959c;
+  background: #3f3f46;
 }
 
 /* Focus styles for accessibility */
@@ -55,17 +58,8 @@ body {
   outline-offset: 2px;
 }
 
-/* Utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-  
-  .glow-border {
-    box-shadow: 0 0 20px var(--border-glow);
-  }
-  
-  .glow-text {
-    text-shadow: 0 0 10px var(--accent);
   }
 }

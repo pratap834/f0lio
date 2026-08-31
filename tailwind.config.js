@@ -8,15 +8,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#0D0D0D',
-        secondary: '#1A1A1A',
+        primary: '#09090b',
+        secondary: '#121215',
+        surface: '#18181b',
+        'surface-hover': '#202024',
         accent: '#00ADB5',
-        'text-primary': '#EEEEEE',
-        'text-secondary': '#B0B0B0',
-        'border-glow': 'rgba(0,173,181,0.3)',
+        'accent-subtle': 'rgba(0, 173, 181, 0.12)',
+        'text-primary': '#f4f4f5',
+        'text-secondary': '#a1a1aa',
+        'text-muted': '#71717a',
+        'border-subtle': 'rgba(255, 255, 255, 0.08)',
+        'border-hover': 'rgba(255, 255, 255, 0.16)',
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          'sans-serif',
+        ],
       },
     },
   },

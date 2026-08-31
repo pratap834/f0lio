@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
 import Icon from './ui/Icon';
@@ -9,173 +10,114 @@ import Icon from './ui/Icon';
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [aboutClickCount, setAboutClickCount] = useState(0);
-  const [projectsClickCount, setProjectsClickCount] = useState(0);
-  const [lastClickTime, setLastClickTime] = useState(0);
-  const [lastProjectsClickTime, setLastProjectsClickTime] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleAboutClick = () => {
-    const now = Date.now();
-    // Reset counter if more than 2 seconds since last click
-    if (now - lastClickTime > 2000) {
-      setAboutClickCount(1);
-    } else {
-      const newCount = aboutClickCount + 1;
-      setAboutClickCount(newCount);
-      
-      // Trigger bang animation on 5th click
-      if (newCount === 5) {
-        window.dispatchEvent(new Event('bang-animation'));
-        setAboutClickCount(0); // Reset counter
-      }
-    }
-    setLastClickTime(now);
-  };
-
-  const handleProjectsClick = () => {
-    const now = Date.now();
-    // Reset counter if more than 2 seconds since last click
-    if (now - lastProjectsClickTime > 2000) {
-      setProjectsClickCount(1);
-    } else {
-      const newCount = projectsClickCount + 1;
-      setProjectsClickCount(newCount);
-      
-      // Trigger secret unlocked animation and save state on 5th click
-      if (newCount === 5) {
-        window.dispatchEvent(new Event('secret-unlocked'));
-        localStorage.setItem('secretProjectsUnlocked', 'true');
-        setProjectsClickCount(0); // Reset counter
-      }
-    }
-    setLastProjectsClickTime(now);
-  };
-
   return (
     <>
-      <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
           isScrolled
-            ? 'bg-black/50 backdrop-blur-md py-3 shadow-[0_1px_0_0_var(--border-glow)]'
-            : 'bg-transparent py-6'
+            ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/80 py-3.5'
+            : 'bg-transparent py-5'
         }`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <motion.div
-              className="text-2xl font-bold"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-text-primary">Prat</span>
-              <span className="text-accent">.</span>
-            </motion.div>
+          <Link href="/" className="group flex items-center gap-1">
+            <span className="font-semibold text-zinc-100 group-hover:text-white transition-colors tracking-tight text-base">
+              Pratap
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                onClick={
-                  link.label === 'About' 
-                    ? handleAboutClick 
-                    : link.label === 'Projects' 
-                    ? handleProjectsClick 
-                    : undefined
-                }
-              >
-                <motion.span
-                  className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
-                  whileHover={{ y: -2 }}
+          <nav className="hidden md:flex items-center space-x-1 sm:space-x-2">
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? 'text-zinc-100 bg-zinc-800/60'
+                      : 'text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900/50'
+                  }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-                </motion.span>
-              </Link>
-            ))}
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <motion.span
-                className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
-                whileHover={{ y: -2 }}
-              >
-                Resume
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </motion.span>
-            </Link>
-          </div>
+                </Link>
+              );
+            })}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-3 py-1.5 rounded-md text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900/50 transition-colors inline-flex items-center gap-1"
+            >
+              Resume
+              <span className="text-xs text-zinc-500">↗</span>
+            </a>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-text-primary"
+            className="md:hidden p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={28} />
+            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={20} />
           </button>
         </div>
-      </motion.nav>
+      </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-primary/95 backdrop-blur-lg md:hidden"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-zinc-950/95 backdrop-blur-xl md:hidden pt-24 px-6 flex flex-col justify-between pb-12"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.2 }}
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              {NAV_LINKS.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
+            <div className="flex flex-col space-y-4">
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+                return (
                   <Link
+                    key={link.href}
                     href={link.href}
-                    onClick={() => {
-                      if (link.label === 'About') handleAboutClick();
-                      if (link.label === 'Projects') handleProjectsClick();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`text-2xl font-semibold transition-colors py-2 ${
+                      isActive ? 'text-accent' : 'text-zinc-300 hover:text-white'
+                    }`}
                   >
                     {link.label}
                   </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: NAV_LINKS.length * 0.1 }}
+                );
+              })}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-semibold text-zinc-300 hover:text-white transition-colors py-2 flex items-center gap-2"
               >
-                <Link 
-                  href="/resume.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
-                >
-                  Resume
-                </Link>
-              </motion.div>
+                Resume <span>↗</span>
+              </a>
+            </div>
+
+            <div className="border-t border-zinc-800 pt-6 text-sm text-zinc-500">
+              AI Engineer &amp; Machine Learning Specialist
             </div>
           </motion.div>
         )}

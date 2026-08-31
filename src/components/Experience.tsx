@@ -11,65 +11,84 @@ export default function Experience() {
   const recentExperience = experienceData.slice(0, 2);
 
   return (
-    <section id="experience" className="py-20">
-      <div className="container mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Work <span className="text-accent">Experience</span>
-          </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Practical AI engineering, deep learning research, and data pipeline experience
-          </p>
-        </motion.div>
+    <section id="experience" className="py-8">
+      <div className="space-y-8">
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+          <div className="space-y-2">
+            <p className="text-xs font-mono text-accent uppercase tracking-widest">
+              Career Journey
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100">
+              Work Experience
+            </h2>
+          </div>
+          <Link
+            href="/experience"
+            className="text-sm font-medium text-zinc-400 hover:text-accent transition-colors inline-flex items-center gap-1 self-start sm:self-auto"
+          >
+            <span>View complete timeline</span>
+            <span>→</span>
+          </Link>
+        </div>
 
-        <div className="max-w-4xl mx-auto space-y-8 mb-12">
+        <div className="space-y-4">
           {recentExperience.map((exp: ExperienceType, index: number) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 14 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="p-8 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all duration-300 group"
+              transition={{ duration: 0.3, delay: index * 0.08 }}
+              className="p-6 sm:p-7 rounded-xl bg-zinc-900/40 hover:bg-zinc-900/70 border border-zinc-800/80 hover:border-zinc-700 transition-all duration-200 space-y-4"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
+                <div className="space-y-1">
+                  <h3 className="text-lg font-semibold text-zinc-100">
                     {exp.role}
                   </h3>
-                  <p className="text-accent text-lg">{exp.company}</p>
-                  {exp.location && (
-                    <p className="text-text-secondary text-sm mt-1">{exp.location}</p>
-                  )}
+                  <div className="flex items-center gap-2 text-sm text-zinc-400">
+                    {exp.companyUrl ? (
+                      <a
+                        href={exp.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-zinc-200 hover:text-accent transition-colors font-medium"
+                      >
+                        {exp.company}
+                      </a>
+                    ) : (
+                      <span className="text-zinc-200 font-medium">{exp.company}</span>
+                    )}
+                    {exp.location && (
+                      <>
+                        <span className="text-zinc-600">•</span>
+                        <span>{exp.location}</span>
+                      </>
+                    )}
+                  </div>
                 </div>
-                <div className="mt-2 md:mt-0">
-                  <span className="px-4 py-2 rounded-full bg-primary border border-accent/20 text-accent text-sm font-semibold whitespace-nowrap">
-                    {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
-                  </span>
-                </div>
+
+                <span className="text-xs font-mono text-zinc-400 bg-zinc-950/80 border border-zinc-800 px-3 py-1 rounded self-start">
+                  {formatDate(exp.startDate)} — {exp.current ? 'Present' : formatDate(exp.endDate)}
+                </span>
               </div>
 
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 text-sm text-zinc-400 leading-relaxed">
                 {exp.description.slice(0, 2).map((item, i) => (
-                  <li key={i} className="flex gap-3 text-text-secondary">
-                    <span className="text-accent mt-1 flex-shrink-0">▹</span>
+                  <li key={i} className="flex gap-2.5 items-start">
+                    <span className="text-accent mt-1 text-xs">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
               {exp.technologies && (
-                <div className="flex flex-wrap gap-2">
-                  {exp.technologies.slice(0, 5).map((tech) => (
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {exp.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs rounded-full bg-primary border border-accent/20 text-accent"
+                      className="text-[11px] font-mono text-zinc-400 bg-zinc-950 border border-zinc-800/80 px-2 py-0.5 rounded"
                     >
                       {tech}
                     </span>
@@ -79,21 +98,6 @@ export default function Experience() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center"
-        >
-          <Link
-            href="/experience"
-            className="inline-block px-8 py-4 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition-all duration-300 font-semibold"
-          >
-            View Full Experience →
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
