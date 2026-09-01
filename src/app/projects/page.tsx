@@ -5,51 +5,25 @@ import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 import { Project } from '@/types';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
-import SecretUnlockedAnimation from '@/components/ui/SecretUnlockedAnimation';
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState<string>('all');
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<string[]>(['all']);
-  const [secretUnlocked, setSecretUnlocked] = useState(false);
 
-  // Check localStorage on mount (client-side only)
-  useEffect(() => {
-    // Check if secret projects are unlocked
-    const isUnlocked = localStorage.getItem('secretProjectsUnlocked') === 'true';
-    setSecretUnlocked(isUnlocked);
-
-    // Listen for unlock event
-    const handleUnlock = () => {
-      setSecretUnlocked(true);
-    };
-    window.addEventListener('secret-unlocked', handleUnlock);
-
-    return () => window.removeEventListener('secret-unlocked', handleUnlock);
-  }, []);
-
-  // Load projects whenever secretUnlocked changes
+  // Load projects
   useEffect(() => {
     async function loadProjects() {
       try {
         const response = await fetch('/api/projects');
         if (response.ok) {
           const data = await response.json();
+          setProjects(data.projects);
           
-          // Always filter out secret projects if not unlocked
-          const filteredProjects = data.projects.filter((p: Project) => {
-            if (p.id === 'vitap-marketplace') {
-              return secretUnlocked;
-            }
-            return true;
-          });
-          
-          setProjects(filteredProjects);
-          
-          // Extract unique categories from filtered projects
+          // Extract unique categories from projects
           const uniqueCategories = ['all', ...Array.from(new Set(
-            filteredProjects.map((p: Project) => p.category).filter(Boolean)
+            data.projects.map((p: Project) => p.category).filter(Boolean)
           ))] as string[];
           setCategories(uniqueCategories);
         }
@@ -61,7 +35,7 @@ export default function ProjectsPage() {
     }
 
     loadProjects();
-  }, [secretUnlocked]);
+  }, []);
   
   const filteredProjects = filter === 'all' 
     ? projects 
@@ -130,10 +104,10 @@ export default function ProjectsPage() {
             <button
               key={category}
               onClick={() => setFilter(category as string)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 backdrop-blur-md ${
                 filter === category
-                  ? 'bg-accent text-black'
-                  : 'bg-secondary/50 backdrop-blur-sm text-text-secondary hover:text-accent border border-accent/20 hover:border-accent/50'
+                  ? 'bg-accent/20 border border-accent/60 text-accent shadow-[0_0_20px_rgba(0,173,181,0.25)]'
+                  : 'bg-white/[0.03] text-text-secondary hover:text-accent border border-white/[0.08] hover:border-accent/30 hover:bg-white/[0.06]'
               }`}
             >
               {(category as string).charAt(0).toUpperCase() + (category as string).slice(1)}
@@ -171,7 +145,6 @@ export default function ProjectsPage() {
         )}
       </div>
       <ScrollIndicator />
-      <SecretUnlockedAnimation />
     </div>
   );
 }

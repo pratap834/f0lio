@@ -9,40 +9,14 @@ import { Project } from '@/types';
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
-  const [secretUnlocked, setSecretUnlocked] = useState(false);
-
-  // Check localStorage on mount (client-side only)
-  useEffect(() => {
-    // Check if secret projects are unlocked
-    const isUnlocked = localStorage.getItem('secretProjectsUnlocked') === 'true';
-    setSecretUnlocked(isUnlocked);
-
-    // Listen for unlock event
-    const handleUnlock = () => {
-      setSecretUnlocked(true);
-    };
-    window.addEventListener('secret-unlocked', handleUnlock);
-
-    return () => window.removeEventListener('secret-unlocked', handleUnlock);
-  }, []);
-
-  // Load projects whenever secretUnlocked changes
+  // Load projects
   useEffect(() => {
     async function loadProjects() {
       try {
         const response = await fetch('/api/projects');
         if (response.ok) {
           const data = await response.json();
-          
-          // Always filter out secret projects if not unlocked
-          const filteredProjects = data.projects.filter((p: Project) => {
-            if (p.id === 'vitap-marketplace') {
-              return secretUnlocked;
-            }
-            return true;
-          });
-          
-          setProjects(filteredProjects);
+          setProjects(data.projects);
         }
       } catch (error) {
         console.error('Error loading projects:', error);
@@ -52,7 +26,7 @@ export default function Projects() {
     }
 
     loadProjects();
-  }, [secretUnlocked]);
+  }, []);
 
   const featuredProjects = projects.filter((p: Project) => p.featured).slice(0, 3);
 
