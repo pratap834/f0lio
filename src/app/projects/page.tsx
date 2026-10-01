@@ -104,10 +104,10 @@ export default function ProjectsPage() {
             <button
               key={category}
               onClick={() => setFilter(category as string)}
-              className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 backdrop-blur-md ${
+              className={`px-6 py-2.5 rounded-full font-medium text-sm transition-all duration-300 backdrop-blur-sm ${
                 filter === category
-                  ? 'bg-accent/20 border border-accent/60 text-accent shadow-[0_0_20px_rgba(0,173,181,0.25)]'
-                  : 'bg-white/[0.03] text-text-secondary hover:text-accent border border-white/[0.08] hover:border-accent/30 hover:bg-white/[0.06]'
+                  ? 'bg-accent text-black font-semibold shadow-[0_0_15px_rgba(0,173,181,0.25)]'
+                  : 'bg-secondary/20 text-text-secondary hover:text-accent border border-accent/15 hover:border-accent/40 hover:bg-secondary/30'
               }`}
             >
               {(category as string).charAt(0).toUpperCase() + (category as string).slice(1)}
