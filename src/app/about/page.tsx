@@ -26,8 +26,8 @@ export default function AboutPage() {
     },
     {
       icon: '',
-      title: 'Full Stack Development',
-      description: 'Creating scalable web applications with modern frameworks, authentication systems, and data-centric platforms.'
+      title: 'ML Engineering & Systems',
+      description: 'Architecting scalable ML pipelines, automated workflows, and production-ready deployments for intelligent applications.'
     }
   ];
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
                     I&apos;m a <span className="text-accent font-semibold">Machine Learning Engineer</span> with hands-on experience in building data-driven solutions and intelligent systems. My work spans from optimizing SQL queries for enterprise data systems to contributing to ML research on Vision Transformers and CNNs.
                   </p>
                   <p className="text-text-secondary text-lg leading-relaxed">
-                    Currently, I&apos;m developing scalable full-stack platforms with modern tech stacks while maintaining a strong focus on ML/AI integration. I specialize in creating efficient data pipelines, automated workflows, and production-ready ML solutions that solve real-world problems.
+                    Currently, I&apos;m developing scalable ML systems and intelligent workflows while architecting robust data pipelines. I specialize in model training, fine-tuning, automated workflows, and delivering production-ready ML solutions that solve real-world problems.
                   </p>
                 </motion.div>
                 

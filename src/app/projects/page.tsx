@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
+import N8nShowcase from '@/components/N8nShowcase';
 import { Project } from '@/types';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
@@ -87,11 +88,14 @@ export default function ProjectsPage() {
             My <span className="text-accent">Projects</span>
           </h1>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            A collection of my work showcasing various technologies and solutions
+            A collection of my work in Machine Learning, AI systems, and cloud automation
             <br />
             <span className="text-sm text-accent">Auto-synced with GitHub • Updates hourly</span>
           </p>
         </motion.div>
+
+        {/* Self-Hosted n8n Showcase Section */}
+        <N8nShowcase />
 
         {/* Filter Buttons */}
         <motion.div

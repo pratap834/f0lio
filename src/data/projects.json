@@ -1,14 +1,38 @@
 [
   {
+    "id": "self-hosted-n8n",
+    "title": "Self-Hosted n8n Automation & AI Workflow Engine",
+    "description": "Production-grade self-deployment of n8n workflow automation on custom cloud infrastructure at n8n.prataps.dev, powering autonomous AI agents and ML inference triggers",
+    "longDescription": "Self-deployed and configured a self-hosted instance of n8n workflow automation on a secure cloud server with automated SSL, custom domain routing (n8n.prataps.dev), and persistent PostgreSQL storage. Engineered to orchestrate complex multi-step automation pipelines, autonomous LLM agents, event-driven webhooks for machine learning inference, and seamless data synchronization across services.\n\nAccess is privately managed: If you want to access it, share an email to pratapsubramani@gmail.com or DM me.",
+    "thumbnail": "/images/projects/n8n-deployment.jpg",
+    "tech": ["n8n", "Docker", "PostgreSQL", "Cloud Infrastructure", "Reverse Proxy", "SSL/TLS", "AI Agents", "Webhooks"],
+    "link": "https://n8n.prataps.dev",
+    "demo": "https://n8n.prataps.dev",
+    "github": "",
+    "category": "AI & Automation",
+    "keyFeatures": [
+      "Production-grade self-hosted deployment at n8n.prataps.dev",
+      "Containerized orchestration with Docker and PostgreSQL",
+      "Reverse proxy with automated SSL/TLS certificates and custom domain routing",
+      "Autonomous AI agent workflows and multi-LLM orchestration",
+      "Real-time webhook triggers for ML model inference and notification pipelines",
+      "Secure role-based access management with isolated credential stores"
+    ],
+    "tags": ["n8n", "Self-Hosted", "Automation", "AI Agents", "MLOps", "Docker", "Cloud"],
+    "status": "Live",
+    "featured": true,
+    "accessNote": "If you want to access it, share an email to pratapsubramani@gmail.com or DM me."
+  },
+  {
     "id": "vitap-marketplace",
     "title": "VIT-AP Student Marketplace Platform",
-    "description": "Full-stack marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities",
-    "longDescription": "Developed a full-stack marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities. Implemented secure authentication and authorization using Clerk with role-based access control for students and administrators, including email domain validation for campus-exclusive access. Designed and built RESTful APIs for post management, conversation handling, and user profiles with PostgreSQL database integration using Neon serverless architecture. Created responsive UI components with real-time message notifications, image upload functionality via Cloudinary, and dynamic filtering by categories and hostels. Integrated middleware for protected routes, onboarding workflows, and implemented error boundaries for robust error handling and improved user experience.",
+    "description": "Marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities",
+    "longDescription": "Developed a marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities. Implemented secure authentication and authorization using Clerk with role-based access control for students and administrators, including email domain validation for campus-exclusive access. Designed and built RESTful APIs for post management, conversation handling, and user profiles with PostgreSQL database integration using Neon serverless architecture. Created responsive UI components with real-time message notifications, image upload functionality via Cloudinary, and dynamic filtering by categories and hostels. Integrated middleware for protected routes, onboarding workflows, and implemented error boundaries for robust error handling and improved user experience.",
     "thumbnail": "/images/projects/vitap-marketplace.jpg",
     "tech": ["Next.js 14", "TypeScript", "React", "PostgreSQL", "Clerk Auth", "Tailwind CSS", "Cloudinary", "shadcn/ui", "Neon"],
     "link": "https://vitap-marketplace.vercel.app/",
     "github": "",
-    "category": "Full Stack",
+    "category": "Web Platforms",
     "featured": true
   },
   {

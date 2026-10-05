@@ -13,6 +13,7 @@ export interface Project {
   keyFeatures?: string[];
   tags?: string[];
   status?: string;
+  accessNote?: string;
 }
 
 export interface Experience {

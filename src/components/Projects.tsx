@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import ProjectCard from './ProjectCard';
+import N8nShowcase from './N8nShowcase';
 import { Project } from '@/types';
 
 export default function Projects() {
@@ -28,7 +29,9 @@ export default function Projects() {
     loadProjects();
   }, []);
 
-  const featuredProjects = projects.filter((p: Project) => p.featured).slice(0, 3);
+  const featuredProjects = projects
+    .filter((p: Project) => p.featured && p.id !== 'self-hosted-n8n')
+    .slice(0, 3);
 
   if (loading) {
     return (
@@ -57,9 +60,12 @@ export default function Projects() {
             Featured <span className="text-accent">Projects</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            Check out some of my recent work (Auto-synced from GitHub)
+            Check out some of my recent work in ML, AI systems, and cloud infrastructure
           </p>
         </motion.div>
+
+        {/* Self-Hosted n8n Deployment Showcase */}
+        <N8nShowcase />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {featuredProjects.map((project: Project, index: number) => (
