@@ -9,125 +9,97 @@ import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen pt-24 pb-16 relative">
-      {/* Animated Background - Same as Hero */}
-      <div className="fixed inset-0 -z-10 bg-gradient-to-b from-primary via-[#111111] to-primary">
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent rounded-full filter blur-[120px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full filter blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/20 rounded-full filter blur-[150px] animate-pulse" style={{ animationDelay: '2s' }} />
-        </div>
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'linear-gradient(#00ADB5 1px, transparent 1px), linear-gradient(90deg, #00ADB5 1px, transparent 1px)',
-          backgroundSize: '50px 50px'
-        }} />
-      </div>
-      
-      <div className="container mx-auto px-6">
+    <div className="min-h-screen pt-28 pb-20">
+      <div className="container mx-auto px-6 max-w-4xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.5 }}
+          className="mb-14"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">
-            Work <span className="text-accent">Experience</span>
+          <p className="text-xs font-mono uppercase tracking-widest text-text-muted mb-2">Career</p>
+          <h1 className="text-3xl md:text-5xl font-semibold tracking-tight text-text-primary mb-3">
+            Work Experience
           </h1>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
-            My professional journey and the amazing teams I&apos;ve worked with
+          <p className="text-text-secondary text-base md:text-lg max-w-2xl">
+            My professional journey and the engineering teams I&apos;ve worked with.
           </p>
         </motion.div>
 
         {/* Timeline */}
-        <div className="max-w-6xl mx-auto relative">
-          {/* Centered Vertical Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-accent/20 -translate-x-1/2 hidden md:block" />
-          
-          {experienceData.map((exp: Experience, index: number) => {
-            const isLeft = index % 2 === 0;
-            
-            return (
-              <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="relative mb-16 last:mb-0"
-              >
-                <div className={`flex items-center gap-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                  {/* Content Card - Takes half width on desktop */}
-                  <div className="w-full md:w-[calc(50%-2rem)] p-8 rounded-2xl bg-secondary/50 backdrop-blur-sm border border-accent/10 hover:border-accent/30 transition-all duration-300 group hover:shadow-[0_12px_40px_rgba(0,173,181,0.1)]">
-                    {/* Header */}
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                      <div>
-                        <h3 className="text-2xl font-bold text-text-primary group-hover:text-accent transition-colors">
-                          {exp.role}
-                        </h3>
-                        {exp.companyUrl ? (
-                          <a
-                            href={exp.companyUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-accent hover:underline inline-flex items-center gap-2"
-                          >
-                            {exp.company}
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                          </a>
-                        ) : (
-                          <p className="text-accent">{exp.company}</p>
-                        )}
-                        {exp.location && (
-                          <p className="text-text-secondary text-sm mt-1">{exp.location}</p>
-                        )}
-                      </div>
-                      <div className="mt-2 md:mt-0">
-                        <span className="px-4 py-2 rounded-full bg-primary border border-accent/20 text-accent text-sm font-semibold whitespace-nowrap">
-                          {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
-                        </span>
-                      </div>
-                    </div>
+        <div className="relative border-l border-border ml-3 md:ml-4 pl-6 md:pl-10 space-y-12">
+          {experienceData.map((exp: Experience, index: number) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              className="relative group"
+            >
+              {/* Timeline marker */}
+              <div className="absolute -left-[31px] md:-left-[47px] top-1.5 w-2.5 h-2.5 rounded-full bg-border group-hover:bg-text-primary transition-colors" />
 
-                    {/* Description */}
-                    <ul className="space-y-3 mb-6">
-                      {exp.description.map((item, i) => (
-                        <li key={i} className="flex gap-3 text-text-secondary">
-                          <span className="text-accent mt-1.5 flex-shrink-0">▹</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    {/* Technologies */}
-                    {exp.technologies && (
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1 text-xs rounded-full bg-primary border border-accent/20 text-accent"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Timeline Dot - Centered */}
-                  <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-accent/20 border-4 border-primary shadow-lg z-10">
-                    <div className="w-full h-full rounded-full border-2 border-accent flex items-center justify-center">
-                      <div className="w-3 h-3 rounded-full bg-accent" />
+              <div className="bg-surface border border-border rounded-lg p-6 md:p-8 hover:border-[#404040] hover:bg-surface-hover transition-colors">
+                {/* Header */}
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2 mb-4">
+                  <div>
+                    <h2 className="text-lg md:text-xl font-semibold text-text-primary">
+                      {exp.role}
+                    </h2>
+                    <div className="flex flex-wrap items-center gap-2 mt-1">
+                      {exp.companyUrl ? (
+                        <a
+                          href={exp.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-text-secondary hover:text-text-primary text-sm font-medium inline-flex items-center gap-1 transition-colors"
+                        >
+                          {exp.company}
+                          <svg className="w-3.5 h-3.5 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <span className="text-text-secondary text-sm font-medium">{exp.company}</span>
+                      )}
+                      {exp.location && (
+                        <span className="text-text-muted text-xs">· {exp.location}</span>
+                      )}
                     </div>
                   </div>
 
-                  {/* Empty space for other side */}
-                  <div className="hidden md:block w-[calc(50%-2rem)]" />
+                  <div className="text-xs font-mono text-text-muted whitespace-nowrap">
+                    {formatDate(exp.startDate)} — {exp.current ? 'Present' : formatDate(exp.endDate)}
+                  </div>
                 </div>
-              </motion.div>
-            );
-          })}
+
+                {/* Description */}
+                <ul className="space-y-2 mb-5 text-sm text-text-secondary leading-relaxed">
+                  {exp.description.map((item, i) => (
+                    <li key={i} className="flex gap-2.5">
+                      <span className="text-text-muted flex-shrink-0">—</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* Technologies */}
+                {exp.technologies && (
+                  <div className="flex flex-wrap gap-1.5 pt-2 border-t border-border">
+                    {exp.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 text-xs rounded bg-[#181818] border border-border text-text-muted font-mono"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
       <ScrollIndicator />

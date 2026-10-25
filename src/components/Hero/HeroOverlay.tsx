@@ -1,36 +1,56 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HeroOverlay() {
   return (
-    <div className="relative inset-0 z-10 flex flex-col items-center justify-center text-center px-6 h-full">
+    <div className="container mx-auto px-6 max-w-6xl w-full">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="space-y-6"
+        transition={{ duration: 0.45, ease: 'easeOut' }}
+        className="max-w-3xl"
       >
-        <motion.h1
-          className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          Hi, I&apos;m{' '}
-          <span className="text-accent glow-text">Pratap</span>
-        </motion.h1>
+        {/* Understated professional descriptor */}
+        <p className="text-xs font-mono uppercase tracking-widest text-text-muted mb-5">
+          Machine Learning Engineer
+        </p>
 
-        <motion.p
-          className="mt-6 text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          Machine Learning Engineer • AI Researcher • Deep Learning Specialist
-          <br />
-          Building intelligent systems and deploying production-ready ML solutions
-        </motion.p>
+        {/* Headline */}
+        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-text-primary mb-6 leading-[1.08]">
+          Hi, I&apos;m Pratap.
+        </h1>
+
+        {/* Supporting Line */}
+        <p className="text-xl sm:text-2xl text-text-primary font-normal leading-relaxed mb-4">
+          Building intelligent AI systems from scratch to production.
+        </p>
+
+        {/* Supporting details reflecting portfolio content */}
+        <p className="text-base text-text-secondary leading-relaxed mb-9 max-w-2xl">
+          Specializing in deep learning, Vision Transformers, and scalable MLOps pipelines. Experienced in optimizing enterprise data workflows and architecting production-grade machine learning solutions.
+        </p>
+
+        {/* Clear Actions */}
+        <div className="flex flex-wrap items-center gap-3.5">
+          <Link
+            href="#projects"
+            className="px-5 py-2.5 rounded-md text-sm font-medium bg-[#F2F2F2] text-[#090909] hover:bg-[#E5E5E5] transition-colors inline-flex items-center gap-1.5"
+          >
+            Explore Projects
+            <span aria-hidden="true">↓</span>
+          </Link>
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-5 py-2.5 rounded-md text-sm font-medium bg-surface text-text-primary border border-border hover:bg-surface-hover hover:border-[#383838] transition-colors inline-flex items-center gap-1.5"
+          >
+            View Resume
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </motion.div>
     </div>
   );

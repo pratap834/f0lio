@@ -107,35 +107,33 @@ export default function ScrollIndicator() {
     <AnimatePresence>
       {isVisible && !isModalOpen && (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ duration: 0.2 }}
+          className="fixed bottom-6 right-6 z-40 hidden sm:block"
         >
           <button
             onClick={handleClick}
-            className="inline-block text-text-secondary hover:text-accent transition-colors cursor-pointer"
+            className="p-2.5 rounded-md bg-surface/90 border border-border text-text-muted hover:text-text-primary hover:border-[#383838] hover:bg-surface-hover transition-colors shadow-sm"
             aria-label={isAtBottom ? "Scroll to top" : "Scroll down"}
+            title={isAtBottom ? "Scroll to top" : "Scroll down"}
           >
             <motion.div
               animate={{ 
-                y: [0, 8, 0],
                 rotate: isAtBottom ? 180 : 0
               }}
-              transition={{ 
-                y: { duration: 1.5, repeat: Infinity },
-                rotate: { duration: 0.3 }
-              }}
+              transition={{ duration: 0.2 }}
             >
               <svg
-                width="32"
-                height="32"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="2"
-                className="drop-shadow-lg"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>

@@ -43,7 +43,7 @@ export default function BangAnimation() {
               duration: 0.6 
             }}
           >
-            <div className="text-[20rem] font-black text-accent drop-shadow-[0_0_50px_rgba(0,173,181,0.8)]">
+            <div className="text-[14rem] sm:text-[18rem] font-black text-[#F2F2F2] drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
               BANG!
             </div>
           </motion.div>
@@ -52,7 +52,7 @@ export default function BangAnimation() {
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-4 h-4 bg-accent rounded-full"
+              className="absolute w-3 h-3 bg-[#E5E5E5] rounded-full"
               initial={{ 
                 x: 0, 
                 y: 0, 
@@ -76,7 +76,7 @@ export default function BangAnimation() {
           {[...Array(3)].map((_, i) => (
             <motion.div
               key={`ring-${i}`}
-              className="absolute border-4 border-accent rounded-full"
+              className="absolute border border-[#52525B] rounded-full"
               initial={{ 
                 width: 0, 
                 height: 0, 
@@ -125,9 +125,9 @@ export default function BangAnimation() {
 
           {/* Flash effect */}
           <motion.div
-            className="absolute inset-0 bg-accent"
+            className="absolute inset-0 bg-white"
             initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.3, 0] }}
+            animate={{ opacity: [0, 0.08, 0] }}
             transition={{ duration: 0.5 }}
           />
         </motion.div>

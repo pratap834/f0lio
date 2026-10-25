@@ -35,11 +35,11 @@ export default function Projects() {
 
   if (loading) {
     return (
-      <section id="projects" className="py-20">
-        <div className="container mx-auto px-6">
-          <div className="text-center">
-            <div className="inline-block w-8 h-8 border-4 border-accent border-t-transparent rounded-full animate-spin" />
-            <p className="text-text-secondary mt-4">Loading projects...</p>
+      <section id="projects" className="py-20 border-t border-border">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center py-16">
+            <div className="inline-block w-6 h-6 border-2 border-text-primary border-t-transparent rounded-full animate-spin" />
+            <p className="text-text-muted text-sm mt-4">Loading projects...</p>
           </div>
         </div>
       </section>
@@ -47,19 +47,19 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-6">
+    <section id="projects" className="py-20 border-t border-border">
+      <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.5 }}
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-accent">Projects</span>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-text-primary mb-2">
+            Featured Projects
           </h2>
-          <p className="text-text-secondary text-lg max-w-2xl mx-auto">
+          <p className="text-text-secondary text-sm md:text-base max-w-2xl">
             Check out some of my recent work in ML, AI systems, and cloud infrastructure
           </p>
         </motion.div>
@@ -67,22 +67,22 @@ export default function Projects() {
         {/* Self-Hosted n8n Deployment Showcase */}
         <N8nShowcase />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {featuredProjects.map((project: Project, index: number) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
           className="text-center"
         >
           <Link
             href="/projects"
-            className="inline-block px-8 py-4 rounded-full bg-accent text-black font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_4px_12px_var(--border-glow)]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-text-primary text-background font-medium hover:bg-white transition-colors duration-200 text-sm"
           >
             View All Projects →
           </Link>

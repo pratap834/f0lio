@@ -73,44 +73,47 @@ export default function MovieFacts() {
   };
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={fact.id}
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: isChanging ? 0 : 1, y: isChanging ? -4 : 0 }}
-        exit={{ opacity: 0, y: -8 }}
-        transition={{ duration: 0.4, ease: 'easeInOut' }}
-        className="flex items-center justify-center gap-3 flex-wrap text-center"
-      >
-        <span className="text-accent text-base">{iconForType(fact.type)}</span>
-        <span className="text-text-secondary text-sm max-w-2xl">
-          {fact.content}
-        </span>
-        {fact.source && (
-          <span className="text-text-secondary text-sm">— {fact.source}</span>
-        )}
-        <motion.button
-          type="button"
-          onClick={changeFact}
-          className="text-accent hover:text-accent/70 transition-colors p-1 rounded"
-          whileHover={{ scale: 1.15 }}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Next fact"
-          title="Next fact"
+    <div className="flex items-center justify-center">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={fact.id}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isChanging ? 0 : 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className="inline-flex items-center justify-center gap-2.5 text-xs text-text-muted max-w-2xl text-center flex-wrap"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
+          <span className="opacity-70 text-sm">{iconForType(fact.type)}</span>
+          <span className="text-text-secondary text-xs">
+            {fact.content}
+          </span>
+          {fact.source && (
+            <span className="text-text-muted text-xs">— {fact.source}</span>
+          )}
+          <button
+            type="button"
+            onClick={changeFact}
+            className="text-text-muted hover:text-text-primary p-1 rounded hover:bg-surface-hover border border-transparent hover:border-border transition-colors"
+            aria-label="Next fact"
+            title="Next fact"
           >
-            <polyline points="11 17 16 12 11 7" />
-            <line x1="18" y1="12" x2="6" y2="12" />
-          </svg>
-        </motion.button>
-      </motion.div>
-    </AnimatePresence>
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="23 4 23 10 17 10" />
+              <polyline points="1 20 1 14 7 14" />
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+            </svg>
+          </button>
+        </motion.div>
+      </AnimatePresence>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Project } from '@/types';
 
@@ -12,119 +12,121 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Hide scroll indicator when modal is open
-  React.useEffect(() => {
+  // Manage body scroll and scroll indicator event when modal is open
+  useEffect(() => {
     if (isExpanded) {
       document.body.style.overflow = 'hidden';
-      // Dispatch event to hide scroll indicator
       window.dispatchEvent(new CustomEvent('modal-opened'));
     } else {
       document.body.style.overflow = 'unset';
-      // Dispatch event to show scroll indicator
       window.dispatchEvent(new CustomEvent('modal-closed'));
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsExpanded(false);
+      }
+    };
+
+    if (isExpanded) {
+      window.addEventListener('keydown', handleKeyDown);
     }
 
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isExpanded]);
 
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        whileHover={{ y: -6 }}
+        transition={{ duration: 0.35, delay: index * 0.05 }}
+        whileHover={{ y: -2 }}
         className="group cursor-pointer h-full"
         onClick={() => setIsExpanded(true)}
       >
-        <div className="relative h-full flex flex-col justify-between p-6 sm:p-7 rounded-2xl bg-secondary/20 backdrop-blur-sm border border-accent/15 overflow-hidden transition-all duration-300 group-hover:border-accent/40 group-hover:bg-secondary/30 group-hover:shadow-[0_8px_30px_rgba(0,173,181,0.12)]">
-          {/* Card Top: Folder/Code Icon & Badges */}
+        <div className="relative h-full flex flex-col justify-between p-5 sm:p-6 rounded-lg bg-surface border border-border hover:border-[#404040] hover:bg-surface-hover transition-colors">
+          {/* Card Top */}
           <div>
-            <div className="flex items-center justify-between mb-5">
-              <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/25 flex items-center justify-center text-accent group-hover:bg-accent/20 transition-colors">
+            <div className="flex items-center justify-between mb-4">
+              <div className="w-8 h-8 rounded border border-border bg-background flex items-center justify-center text-text-muted group-hover:text-text-primary transition-colors">
                 <svg
-                  className="w-5 h-5"
+                  className="w-4 h-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    strokeWidth={1.75}
+                    strokeWidth={1.5}
                     d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
                   />
                 </svg>
               </div>
 
-              {project.featured && (
-                <span className="px-3 py-1 rounded-full bg-accent/10 border border-accent/25 text-accent text-xs font-semibold flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                  Featured
-                </span>
-              )}
+              <div className="flex items-center gap-2">
+                {project.category && (
+                  <span className="text-[11px] font-mono text-text-muted uppercase">
+                    {project.category}
+                  </span>
+                )}
+                {project.featured && (
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono border border-border text-text-secondary bg-background">
+                    Featured
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Title & Description */}
-            <h3 className="text-xl font-bold text-text-primary group-hover:text-accent transition-colors duration-200 mb-2.5 line-clamp-1">
+            <h3 className="text-base sm:text-lg font-semibold text-text-primary group-hover:text-white transition-colors mb-2 line-clamp-1">
               {project.title}
             </h3>
-            <p className="text-text-secondary text-sm line-clamp-3 leading-relaxed mb-4">
+            <p className="text-text-secondary text-xs sm:text-sm line-clamp-3 leading-relaxed mb-4">
               {project.description}
             </p>
 
             {project.accessNote && (
-              <div className="flex items-center gap-2 text-xs text-accent bg-accent/10 border border-accent/25 px-3 py-2 rounded-xl mb-5">
-                <svg className="w-3.5 h-3.5 flex-shrink-0 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span className="truncate">Access: Email pratapsubramani@gmail.com / DM</span>
+              <div className="flex items-center gap-1.5 text-xs text-text-muted bg-background border border-border px-2.5 py-1.5 rounded mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400/80 flex-shrink-0" />
+                <span className="truncate text-[11px] font-mono">Private Access Required</span>
               </div>
             )}
           </div>
 
           {/* Card Bottom: Tech Stack & Action Links */}
-          <div>
-            {/* Tech Stack */}
-            <div className="flex flex-wrap gap-2 mb-5">
+          <div className="pt-2">
+            <div className="flex flex-wrap gap-1.5 mb-4">
               {project.tech.slice(0, 4).map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 text-xs rounded-full bg-primary/40 border border-accent/15 text-text-secondary group-hover:border-accent/30 group-hover:text-accent/90 transition-colors"
+                  className="px-2 py-0.5 text-xs rounded border border-border bg-background text-text-muted font-mono"
                 >
                   {tech}
                 </span>
               ))}
               {project.tech.length > 4 && (
-                <span className="px-3 py-1 text-xs rounded-full bg-primary/40 border border-accent/15 text-text-secondary">
+                <span className="px-1.5 py-0.5 text-xs rounded text-text-muted font-mono">
                   +{project.tech.length - 4}
                 </span>
               )}
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex gap-3 pt-4 border-t border-accent/10">
+            {/* Action Links */}
+            <div className="flex items-center gap-2 pt-3 border-t border-border/60">
               {(project.demo || project.link) && (
                 <a
                   href={project.demo || project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2.5 rounded-xl bg-accent text-black text-xs font-semibold text-center hover:bg-accent/90 transition-colors"
+                  className="flex-1 py-1.5 rounded bg-[#F2F2F2] text-[#090909] text-xs font-medium text-center hover:bg-[#E5E5E5] transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  Live Demo
-                </a>
-              )}
-              {project.accessNote && (
-                <a
-                  href="mailto:pratapsubramani@gmail.com?subject=Access%20Request%20for%20n8n%20Deployment"
-                  className="flex-1 px-3 py-2.5 rounded-xl border border-accent/30 text-accent text-xs font-semibold text-center hover:bg-accent/10 transition-colors whitespace-nowrap"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Request Access
+                  Live Demo ↗
                 </a>
               )}
               {project.github && (
@@ -132,10 +134,19 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 px-4 py-2.5 rounded-xl border border-accent/30 text-accent text-xs font-semibold text-center hover:bg-accent/10 transition-colors"
+                  className="flex-1 py-1.5 rounded border border-border bg-surface text-text-secondary text-xs font-medium text-center hover:text-text-primary hover:border-[#383838] transition-colors"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  GitHub
+                  GitHub ↗
+                </a>
+              )}
+              {project.accessNote && !project.demo && (
+                <a
+                  href="mailto:pratapsubramani@gmail.com?subject=Access%20Request%20for%20Project"
+                  className="flex-1 py-1.5 rounded border border-border bg-surface text-text-secondary text-xs font-medium text-center hover:text-text-primary hover:border-[#383838] transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Request Access
                 </a>
               )}
             </div>
@@ -146,198 +157,181 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       {/* Expanded Modal View */}
       <AnimatePresence>
         {isExpanded && (
-          <>
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
-              className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50"
+              transition={{ duration: 0.15 }}
+              className="fixed inset-0 bg-black/85 backdrop-blur-sm"
               onClick={() => setIsExpanded(false)}
             />
 
-            {/* Expanded Modal */}
+            {/* Expanded Modal Box */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              initial={{ opacity: 0, scale: 0.98, y: 8 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", damping: 28, stiffness: 350 }}
-              className="fixed inset-4 md:inset-10 lg:inset-20 z-50 overflow-hidden"
+              exit={{ opacity: 0, scale: 0.98, y: 8 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
+              className="relative w-full max-w-2xl max-h-[88vh] z-10 flex flex-col rounded-lg bg-surface border border-border shadow-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby={`modal-title-${project.id}`}
             >
-              <div className="relative h-full rounded-2xl bg-secondary/85 backdrop-blur-xl border border-accent/25 shadow-[0_20px_60px_rgba(0,173,181,0.2)] overflow-y-auto">
-                {/* Modal Top Header */}
-                <div className="p-6 md:p-8 border-b border-accent/15 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center text-accent">
-                      <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={1.75}
-                          d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                        />
-                      </svg>
-                    </div>
-                    <div>
-                      {project.category && (
-                        <span className="text-xs font-semibold text-accent uppercase tracking-wider">
-                          {project.category}
-                        </span>
-                      )}
-                      {project.status && (
-                        <span className="ml-3 inline-flex items-center gap-1.5 text-xs text-text-secondary">
-                          <span className="w-2 h-2 rounded-full bg-green-400"></span>
-                          {project.status}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
+              {/* Modal Header */}
+              <div className="p-5 sm:p-6 border-b border-border flex items-center justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-1.5">
+                    {project.category && (
+                      <span className="text-[11px] font-mono text-text-muted uppercase">
+                        {project.category}
+                      </span>
+                    )}
                     {project.featured && (
-                      <span className="px-3 py-1 rounded-full bg-accent/15 border border-accent/30 text-accent text-xs font-semibold">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-mono border border-border text-text-secondary bg-background">
                         Featured
                       </span>
                     )}
-                    <button
-                      onClick={() => setIsExpanded(false)}
-                      className="w-9 h-9 rounded-full bg-primary/50 border border-accent/20 flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-accent/50 transition-colors"
-                      aria-label="Close modal"
-                    >
-                      ✕
-                    </button>
+                  </div>
+                  <h2
+                    id={`modal-title-${project.id}`}
+                    className="text-xl sm:text-2xl font-bold tracking-tight text-text-primary"
+                  >
+                    {project.title}
+                  </h2>
+                </div>
+
+                <button
+                  onClick={() => setIsExpanded(false)}
+                  className="p-1.5 rounded text-text-muted hover:text-text-primary hover:bg-surface-hover transition-colors"
+                  aria-label="Close modal (Esc)"
+                  title="Close (Esc)"
+                >
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.75}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Modal Body */}
+              <div className="p-5 sm:p-6 overflow-y-auto space-y-6 text-sm text-text-secondary">
+                {/* Description */}
+                <div>
+                  <p className="text-sm sm:text-base leading-relaxed text-text-primary">
+                    {project.description}
+                  </p>
+                </div>
+
+                {/* Long Description */}
+                {project.longDescription && (
+                  <div>
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-text-muted mb-2">
+                      About Project
+                    </h3>
+                    <p className="leading-relaxed whitespace-pre-line text-sm text-text-secondary">
+                      {project.longDescription}
+                    </p>
+                  </div>
+                )}
+
+                {/* Key Features */}
+                {project.keyFeatures && project.keyFeatures.length > 0 && (
+                  <div>
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-text-muted mb-2.5">
+                      Key Capabilities & Highlights
+                    </h3>
+                    <ul className="space-y-2">
+                      {project.keyFeatures.map((feature, i) => (
+                        <li key={i} className="flex gap-2.5 text-text-secondary text-sm">
+                          <span className="text-text-muted mt-0.5 select-none">—</span>
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Tech Stack */}
+                <div>
+                  <h3 className="text-xs font-mono uppercase tracking-wider text-text-muted mb-2">
+                    Technologies Used
+                  </h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tech.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2.5 py-1 text-xs rounded border border-border bg-background text-text-secondary font-mono"
+                      >
+                        {tech}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Content Section */}
-                <div className="p-6 md:p-8 lg:p-10">
-                  {/* Title */}
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-4">
-                    {project.title}
-                  </h2>
-
-                  {/* Short Description */}
-                  <p className="text-text-secondary text-base md:text-lg mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  {/* Long Description */}
-                  {project.longDescription && (
-                    <div className="mb-8">
-                      <h3 className="text-lg font-bold text-accent mb-3">About This Project</h3>
-                      <p className="text-text-secondary leading-relaxed whitespace-pre-line text-sm md:text-base">
-                        {project.longDescription}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Key Features */}
-                  {project.keyFeatures && project.keyFeatures.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="text-lg font-bold text-accent mb-3">Key Features</h3>
-                      <ul className="space-y-2">
-                        {project.keyFeatures.map((feature, i) => (
-                          <li key={i} className="flex gap-3 text-text-secondary text-sm md:text-base">
-                            <span className="text-accent mt-0.5 flex-shrink-0">▹</span>
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {/* Tech Stack */}
-                  <div className="mb-8">
-                    <h3 className="text-lg font-bold text-accent mb-3">Technologies Used</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3.5 py-1.5 text-xs md:text-sm rounded-full bg-primary/50 border border-accent/20 text-accent font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
+                {/* Access Instructions Callout */}
+                {project.accessNote && (
+                  <div className="p-4 rounded border border-border bg-background">
+                    <p className="text-xs font-medium text-text-primary mb-1">
+                      Private Access Notice
+                    </p>
+                    <p className="text-xs text-text-muted leading-relaxed">
+                      {project.accessNote}
+                    </p>
                   </div>
+                )}
+              </div>
 
-                  {/* Tags */}
-                  {project.tags && project.tags.length > 0 && (
-                    <div className="mb-8">
-                      <h3 className="text-lg font-bold text-accent mb-3">Tags</h3>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3.5 py-1.5 text-xs md:text-sm rounded-full bg-primary/30 border border-accent/10 text-text-secondary font-medium"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
+              {/* Modal Footer */}
+              <div className="p-4 sm:p-5 border-t border-border flex flex-wrap items-center justify-between gap-3 bg-surface">
+                <span className="text-xs text-text-muted font-mono">
+                  Press Esc to close
+                </span>
+
+                <div className="flex items-center gap-2.5">
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-md border border-border text-text-primary text-xs font-medium hover:bg-surface-hover hover:border-[#383838] transition-colors"
+                    >
+                      View on GitHub ↗
+                    </a>
                   )}
-
-                  {/* Access Instructions Callout if required */}
-                  {project.accessNote && (
-                    <div className="p-4 md:p-5 rounded-2xl bg-accent/10 border border-accent/25 mb-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                      <div className="flex items-start gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-accent/20 border border-accent/30 flex items-center justify-center text-accent flex-shrink-0 mt-0.5">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                          </svg>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-accent text-sm md:text-base">Access Request Required</h4>
-                          <p className="text-text-secondary text-xs md:text-sm mt-0.5 leading-relaxed">
-                            {project.accessNote}
-                          </p>
-                        </div>
-                      </div>
-                      <a
-                        href="mailto:pratapsubramani@gmail.com?subject=Access%20Request%20for%20n8n%20Deployment"
-                        className="px-4 py-2.5 rounded-xl bg-accent text-black font-semibold text-xs md:text-sm whitespace-nowrap hover:bg-accent/90 transition-colors flex items-center gap-1.5 self-start sm:self-center shadow-[0_2px_8px_var(--border-glow)]"
-                      >
-                        <span>Email for Access →</span>
-                      </a>
-                    </div>
+                  {(project.demo || project.link) && (
+                    <a
+                      href={project.demo || project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 rounded-md bg-[#F2F2F2] text-[#090909] text-xs font-medium hover:bg-[#E5E5E5] transition-colors"
+                    >
+                      View Live Demo ↗
+                    </a>
                   )}
-
-                  {/* Action Buttons */}
-                  <div className="flex flex-wrap gap-4 pt-4 border-t border-accent/15">
-                    {(project.demo || project.link) && (
-                      <a
-                        href={project.demo || project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-xl bg-accent text-black text-sm font-semibold hover:bg-accent/90 transition-colors flex items-center gap-2"
-                      >
-                        <span>View Live Demo →</span>
-                      </a>
-                    )}
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 rounded-xl border border-accent/30 text-accent text-sm font-semibold hover:bg-accent/10 transition-colors flex items-center gap-2"
-                      >
-                        <span>View on GitHub →</span>
-                      </a>
-                    )}
-                  </div>
+                  {project.accessNote && !project.demo && (
+                    <a
+                      href="mailto:pratapsubramani@gmail.com?subject=Access%20Request%20for%20Deployment"
+                      className="px-4 py-2 rounded-md bg-[#F2F2F2] text-[#090909] text-xs font-medium hover:bg-[#E5E5E5] transition-colors"
+                    >
+                      Request Access
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </>

@@ -2,73 +2,81 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import Icon from './ui/Icon';
-import { SITE_CONFIG } from '@/lib/constants';
+import { SITE_CONFIG, NAV_LINKS } from '@/lib/constants';
 import MovieFacts from './MovieFacts';
 
 export default function Footer() {
   const socialLinks = [
-    { platform: 'github', url: SITE_CONFIG.github, icon: 'github' },
-    { platform: 'linkedin', url: SITE_CONFIG.linkedin, icon: 'linkedin' },
-    { platform: 'instagram', url: SITE_CONFIG.instagram, icon: 'instagram' },
-    { platform: 'email', url: `mailto:${SITE_CONFIG.email}`, icon: 'mail' },
+    { platform: 'github', url: SITE_CONFIG.github, icon: 'github', label: 'GitHub' },
+    { platform: 'linkedin', url: SITE_CONFIG.linkedin, icon: 'linkedin', label: 'LinkedIn' },
+    { platform: 'instagram', url: SITE_CONFIG.instagram, icon: 'instagram', label: 'Instagram' },
+    { platform: 'email', url: `mailto:${SITE_CONFIG.email}`, icon: 'mail', label: 'Email' },
   ];
 
   return (
-    <footer className="relative border-t border-secondary">
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-30" />
-
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Brand */}
-          <div className="flex flex-col items-center md:items-start">
-            <Link href="/">
-              <motion.div
-                className="text-2xl font-bold mb-2"
-                whileHover={{ scale: 1.05 }}
-              >
-                <span className="text-text-primary">Prat</span>
-                <span className="text-accent">.</span>
-              </motion.div>
+    <footer className="border-t border-border bg-[#090909] text-text-secondary">
+      <div className="container mx-auto px-6 max-w-6xl py-12">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          {/* Brand & Summary */}
+          <div>
+            <Link href="/" className="inline-block mb-1.5">
+              <span className="text-base font-semibold tracking-tight text-text-primary">
+                Pratap Subramani<span className="text-text-muted">.</span>
+              </span>
             </Link>
-            <p className="text-text-secondary text-sm">
-              Building innovative digital experiences
+            <p className="text-xs text-text-muted">
+              Machine Learning Engineer • AI Systems & Research
             </p>
           </div>
 
+          {/* Secondary Navigation */}
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-xs" aria-label="Footer Navigation">
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-text-secondary hover:text-text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary hover:text-text-primary transition-colors"
+            >
+              Resume ↗
+            </Link>
+          </nav>
+
           {/* Social Links */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
             {socialLinks.map((link) => (
-              <motion.a
+              <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-text-secondary hover:text-accent transition-colors"
-                whileHover={{ scale: 1.2, y: -2 }}
-                whileTap={{ scale: 0.9 }}
-                aria-label={link.platform}
+                className="text-text-muted hover:text-text-primary transition-colors p-1"
+                aria-label={link.label}
+                title={link.label}
               >
-                <Icon name={link.icon} size={24} />
-              </motion.a>
+                <Icon name={link.icon} size={18} />
+              </a>
             ))}
-          </div>
-
-          {/* Copyright */}
-          <div className="text-center md:text-right">
-            <p className="text-text-secondary text-sm">
-              © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
-            </p>
-            <p className="text-text-secondary text-xs mt-1">
-              Built with Next.js & Three.js
-            </p>
           </div>
         </div>
 
-        {/* Movie Facts Section */}
-        <div className="border-t border-accent/10 mt-6 pt-4">
-          <MovieFacts />
+        {/* Trivia Feature & Copyright */}
+        <div className="border-t border-border/60 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="w-full md:w-auto">
+            <MovieFacts />
+          </div>
+          <p className="text-xs text-text-muted flex-shrink-0">
+            © {new Date().getFullYear()} Pratap
+          </p>
         </div>
       </div>
     </footer>

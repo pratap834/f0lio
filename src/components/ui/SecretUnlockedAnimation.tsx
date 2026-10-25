@@ -24,7 +24,7 @@ export default function SecretUnlockedAnimation() {
           {[...Array(16)].map((_, i) => (
             <motion.div
               key={`particle-${i}`}
-              className="absolute w-3 h-3 rounded-full bg-accent"
+              className="absolute w-3 h-3 rounded-full bg-[#F2F2F2]"
               initial={{ 
                 x: 0, 
                 y: 0, 
@@ -48,7 +48,7 @@ export default function SecretUnlockedAnimation() {
           {[0, 1, 2].map((i) => (
             <motion.div
               key={`ring-${i}`}
-              className="absolute border-4 border-accent rounded-full"
+              className="absolute border border-[#52525B] rounded-full"
               initial={{ 
                 width: 0, 
                 height: 0, 
@@ -71,7 +71,7 @@ export default function SecretUnlockedAnimation() {
           {[...Array(12)].map((_, i) => (
             <motion.div
               key={`star-${i}`}
-              className="absolute text-accent text-2xl"
+              className="absolute text-white text-xl opacity-75"
               initial={{ 
                 scale: 0,
                 rotate: 0,
@@ -96,9 +96,9 @@ export default function SecretUnlockedAnimation() {
 
           {/* Flash Effect */}
           <motion.div
-            className="absolute inset-0 bg-accent"
+            className="absolute inset-0 bg-white"
             initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 0.3, 0] }}
+            animate={{ opacity: [0, 0.08, 0] }}
             transition={{ duration: 0.5 }}
           />
 
@@ -124,58 +124,13 @@ export default function SecretUnlockedAnimation() {
             }}
           >
             <div className="relative">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 blur-2xl bg-accent/50 animate-pulse" />
-              
-              {/* Text with multiple shadows for depth */}
-              <h1 
-                className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-wider"
-                style={{
-                  textShadow: `
-                    0 0 10px rgba(0, 173, 181, 0.8),
-                    0 0 20px rgba(0, 173, 181, 0.6),
-                    0 0 30px rgba(0, 173, 181, 0.4),
-                    0 0 40px rgba(0, 173, 181, 0.2),
-                    3px 3px 0px rgba(0, 0, 0, 0.8),
-                    6px 6px 0px rgba(0, 0, 0, 0.4)
-                  `
-                }}
-              >
-                <motion.span
-                  className="inline-block text-accent"
-                  animate={{ 
-                    textShadow: [
-                      '0 0 10px rgba(0, 173, 181, 0.8)',
-                      '0 0 30px rgba(0, 173, 181, 1)',
-                      '0 0 10px rgba(0, 173, 181, 0.8)',
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 0.5, 
-                    repeat: 5,
-                    ease: "easeInOut" 
-                  }}
-                >
+              <h1 className="relative text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-[#F2F2F2]">
+                <motion.span className="inline-block text-[#F2F2F2]">
                   Secret Projects
                 </motion.span>
                 <br />
-                <motion.span
-                  className="inline-block text-white"
-                  animate={{ 
-                    textShadow: [
-                      '0 0 10px rgba(255, 255, 255, 0.8)',
-                      '0 0 30px rgba(255, 255, 255, 1)',
-                      '0 0 10px rgba(255, 255, 255, 0.8)',
-                    ]
-                  }}
-                  transition={{ 
-                    duration: 0.5, 
-                    repeat: 5,
-                    ease: "easeInOut",
-                    delay: 0.1
-                  }}
-                >
-                  Unlocked!
+                <motion.span className="inline-block text-[#A1A1AA]">
+                  Unlocked
                 </motion.span>
               </h1>
 

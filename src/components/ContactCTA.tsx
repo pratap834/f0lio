@@ -6,45 +6,38 @@ import Link from 'next/link';
 
 export default function ContactCTA() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-6">
+    <section className="py-20 border-t border-border">
+      <div className="container mx-auto px-6 max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto text-center"
+          transition={{ duration: 0.5 }}
+          className="p-10 md:p-14 rounded-lg bg-surface border border-border text-center max-w-4xl mx-auto"
         >
-          <div className="p-12 rounded-3xl bg-secondary/50 backdrop-blur-sm border border-accent/10 relative overflow-hidden">
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-accent/5" />
-            
-            <div className="relative z-10">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Let&apos;s Work <span className="text-accent">Together</span>
-              </h2>
-              <p className="text-text-secondary text-lg mb-8 max-w-2xl mx-auto">
-                Have a project in mind? I&apos;m always interested in hearing about new opportunities
-                and collaborations. Let&apos;s create something amazing together!
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 rounded-full bg-accent text-black font-semibold hover:bg-accent/90 transition-all duration-300 shadow-[0_4px_12px_var(--border-glow)]"
-                >
-                  Get In Touch
-                </Link>
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-8 py-4 rounded-full border border-accent text-accent hover:bg-accent hover:text-black transition-all duration-300 font-semibold"
-                >
-                  Download Resume
-                </a>
-              </div>
-            </div>
+          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-text-primary mb-3">
+            Let&apos;s Work Together
+          </h2>
+          <p className="text-text-secondary text-sm md:text-base mb-8 max-w-xl mx-auto">
+            Have a project in mind? I&apos;m always interested in hearing about new opportunities
+            and collaborations.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md bg-text-primary text-background font-medium hover:bg-white transition-colors text-sm"
+            >
+              Get In Touch
+            </Link>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-md border border-border bg-surface text-text-primary text-sm font-medium hover:bg-surface-hover hover:border-[#404040] transition-colors"
+            >
+              Download Resume
+            </a>
           </div>
         </motion.div>
       </div>

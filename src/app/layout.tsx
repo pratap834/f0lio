@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" data-theme="dark">
-      <body className="text-text-primary antialiased">
+    <html lang="en" data-theme="dark" className="dark">
+      <body className="bg-background text-text-primary antialiased selection:bg-[#262626] selection:text-[#F2F2F2]">
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />

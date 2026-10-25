@@ -17,12 +17,12 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const baseStyles = 'px-6 py-3 rounded-full font-semibold transition-all duration-300 inline-flex items-center justify-center';
+  const baseStyles = 'px-5 py-2.5 rounded-md text-sm font-medium transition-colors inline-flex items-center justify-center gap-2';
   
   const variants = {
-    primary: 'bg-accent text-black shadow-[0_4px_12px_var(--border-glow)] hover:translate-y-[-2px] hover:shadow-[0_6px_20px_var(--border-glow)]',
-    secondary: 'bg-secondary text-text-primary border border-[rgba(255,255,255,0.1)] hover:border-accent hover:bg-[rgba(0,173,181,0.05)]',
-    ghost: 'border border-[rgba(0,173,181,0.3)] text-accent hover:bg-[rgba(0,173,181,0.1)]',
+    primary: 'bg-[#F2F2F2] text-[#090909] hover:bg-[#E5E5E5] active:bg-[#CCCCCC]',
+    secondary: 'bg-surface text-text-primary border border-border hover:bg-surface-hover hover:border-[#383838]',
+    ghost: 'bg-transparent text-text-secondary border border-border hover:text-text-primary hover:border-[#383838] hover:bg-surface',
   };
 
   const Component = href ? motion.a : motion.button;
@@ -31,8 +31,8 @@ export default function Button({
     <Component
       href={href}
       className={`${baseStyles} ${variants[variant]} ${className}`}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ y: -1 }}
+      whileTap={{ y: 0 }}
       {...(props as any)}
     >
       {children}

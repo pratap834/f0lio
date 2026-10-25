@@ -2,11 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { NAV_LINKS } from '@/lib/constants';
 import Icon from './ui/Icon';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [aboutClickCount, setAboutClickCount] = useState(0);
@@ -16,7 +18,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,17 +27,15 @@ export default function Navbar() {
 
   const handleAboutClick = () => {
     const now = Date.now();
-    // Reset counter if more than 2 seconds since last click
     if (now - lastClickTime > 2000) {
       setAboutClickCount(1);
     } else {
       const newCount = aboutClickCount + 1;
       setAboutClickCount(newCount);
       
-      // Trigger bang animation on 5th click
       if (newCount === 5) {
         window.dispatchEvent(new Event('bang-animation'));
-        setAboutClickCount(0); // Reset counter
+        setAboutClickCount(0);
       }
     }
     setLastClickTime(now);
@@ -43,18 +43,16 @@ export default function Navbar() {
 
   const handleProjectsClick = () => {
     const now = Date.now();
-    // Reset counter if more than 2 seconds since last click
     if (now - lastProjectsClickTime > 2000) {
       setProjectsClickCount(1);
     } else {
       const newCount = projectsClickCount + 1;
       setProjectsClickCount(newCount);
       
-      // Trigger secret unlocked animation and save state on 5th click
       if (newCount === 5) {
         window.dispatchEvent(new Event('secret-unlocked'));
         localStorage.setItem('secretProjectsUnlocked', 'true');
-        setProjectsClickCount(0); // Reset counter
+        setProjectsClickCount(0);
       }
     }
     setLastProjectsClickTime(now);
@@ -62,120 +60,116 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
           isScrolled
-            ? 'bg-black/50 backdrop-blur-md py-3 shadow-[0_1px_0_0_var(--border-glow)]'
-            : 'bg-transparent py-6'
+            ? 'bg-[#090909]/95 backdrop-blur-sm border-b border-border py-3.5'
+            : 'bg-[#090909]/80 backdrop-blur-sm border-b border-border/50 py-4'
         }`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
       >
-        <div className="container mx-auto px-6 flex items-center justify-between">
+        <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
           {/* Logo */}
-          <Link href="/">
-            <motion.div
-              className="text-2xl font-bold"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-text-primary">Prat</span>
-              <span className="text-accent">.</span>
-            </motion.div>
+          <Link href="/" className="group inline-flex items-center">
+            <span className="text-lg font-semibold tracking-tight text-text-primary group-hover:text-white transition-colors">
+              Prat<span className="text-text-muted">.</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {NAV_LINKS.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                onClick={
-                  link.label === 'About' 
-                    ? handleAboutClick 
-                    : link.label === 'Projects' 
-                    ? handleProjectsClick 
-                    : undefined
-                }
-              >
-                <motion.span
-                  className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
-                  whileHover={{ y: -2 }}
+          <nav className="hidden md:flex items-center space-x-7" aria-label="Main Navigation">
+            {NAV_LINKS.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link 
+                  key={link.href} 
+                  href={link.href}
+                  onClick={
+                    link.label === 'About' 
+                      ? handleAboutClick 
+                      : link.label === 'Projects' 
+                      ? handleProjectsClick 
+                      : undefined
+                  }
+                  className={`text-sm transition-colors relative py-1 ${
+                    isActive
+                      ? 'text-text-primary font-medium'
+                      : 'text-text-secondary hover:text-text-primary'
+                  }`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-                </motion.span>
-              </Link>
-            ))}
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              <motion.span
-                className="text-text-secondary hover:text-accent transition-colors relative group cursor-pointer"
-                whileHover={{ y: -2 }}
-              >
-                Resume
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full" />
-              </motion.span>
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[1.5px] bg-[#E5E5E5]" />
+                  )}
+                </Link>
+              );
+            })}
+            
+            <Link 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm px-3.5 py-1.5 rounded border border-border text-text-secondary hover:text-text-primary hover:border-[#383838] transition-colors"
+            >
+              Resume ↗
             </Link>
-          </div>
+          </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-text-primary"
+            className="md:hidden p-1.5 text-text-secondary hover:text-text-primary transition-colors focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
-            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={28} />
+            <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={22} />
           </button>
         </div>
-      </motion.nav>
+      </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-primary/95 backdrop-blur-lg md:hidden"
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-[#090909] md:hidden pt-24 px-6 flex flex-col justify-between pb-10"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.15 }}
           >
-            <div className="flex flex-col items-center justify-center h-full space-y-8">
-              {NAV_LINKS.map((link, index) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
+            <nav className="flex flex-col space-y-5" aria-label="Mobile Navigation">
+              {NAV_LINKS.map((link) => {
+                const isActive = pathname === link.href;
+                return (
                   <Link
+                    key={link.href}
                     href={link.href}
                     onClick={() => {
                       if (link.label === 'About') handleAboutClick();
                       if (link.label === 'Projects') handleProjectsClick();
                       setIsMobileMenuOpen(false);
                     }}
-                    className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
+                    className={`text-2xl font-medium transition-colors ${
+                      isActive ? 'text-text-primary' : 'text-text-secondary hover:text-text-primary'
+                    }`}
                   >
                     {link.label}
                   </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: NAV_LINKS.length * 0.1 }}
+                );
+              })}
+              <Link 
+                href="/resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-2xl font-medium text-text-secondary hover:text-text-primary transition-colors pt-2"
               >
-                <Link 
-                  href="/resume.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-3xl font-bold text-text-primary hover:text-accent transition-colors"
-                >
-                  Resume
-                </Link>
-              </motion.div>
+                Resume ↗
+              </Link>
+            </nav>
+
+            <div className="border-t border-border pt-6">
+              <p className="text-xs text-text-muted">
+                Pratap Subramani • Machine Learning Engineer
+              </p>
             </div>
           </motion.div>
         )}

@@ -1,7 +1,29 @@
 [
   {
+    "id": "exp-0",
+    "role": "Developer Consultant",
+    "company": "Independent",
+    "companyUrl": "",
+    "location": "Remote",
+    "startDate": "2026-07",
+    "endDate": "Present",
+    "current": true,
+    "description": [
+      "Built CompanyRAG, a multimodal knowledge platform with hybrid search and evidence-based retrieval.",
+      "Developed an automation solution using XLM-RoBERTa and a feasibility dashboard for data-driven analysis."
+    ],
+    "technologies": [
+      "Python",
+      "FastAPI",
+      "Next.js",
+      "XLM-RoBERTa",
+      "RAG",
+      "Qdrant"
+    ]
+  },
+  {
     "id": "exp-1",
-    "role": "Machine Learning Engineer (Freelance)",
+    "role": "Fullstack Developer (Freelance)",
     "company": "Playlit",
     "companyUrl": "https://playlit.com",
     "location": "Remote",
@@ -14,7 +36,12 @@
       "Designed and managed a waitlist system that captures user interaction metrics from more than 400+ users.",
       "Architected scalable back-end infrastructure for reliable data handling and user behavior tracking."
     ],
-    "technologies": ["Next.js", "Neon DB", "Clerk Auth", "Cloudinary"]
+    "technologies": [
+      "Next.js",
+      "Neon DB",
+      "Clerk Auth",
+      "Cloudinary"
+    ]
   },
   {
     "id": "exp-2",
@@ -32,22 +59,14 @@
       "Collaborated with business analysts to document workflows, schema mappings, and process automations for technical reporting.",
       "Contributed to internal ML research on Vision Transformers and CNNs, focusing on scalable inference strategies for analytics solutions."
     ],
-    "technologies": ["Python", "SQL", "Vision Transformers", "CNN", "Data Pipeline", "ML Research"]
-  },
-  {
-    "id": "exp-4",
-    "role": "Tech Python Co-Lead",
-    "company": "NextGen Cloud",
-    "companyUrl": "",
-    "location": "",
-    "startDate": "2023-01",
-    "endDate": "2024-12",
-    "current": false,
-    "description": [
-      "Built an e-commerce system emphasizing transactional data flow and user data management.",
-      "Provided hands-on sessions on back-end analytics, performance debugging, and query optimization."
-    ],
-    "technologies": ["Python", "E-commerce", "Backend", "Data Management", "Analytics"]
+    "technologies": [
+      "Python",
+      "SQL",
+      "Vision Transformers",
+      "CNN",
+      "Data Pipeline",
+      "ML Research"
+    ]
   },
   {
     "id": "exp-3",
@@ -63,21 +82,11 @@
       "Facilitated workshops on data security, analytics, and vulnerability assessment.",
       "Mentored members in structured problem-solving and investigative analysis techniques."
     ],
-    "technologies": ["Cybersecurity", "CTF", "Reverse Engineering", "Data Security"]
-  },
-  {
-    "id": "exp-5",
-    "role": "Content Team Member",
-    "company": "Machine Learning Club",
-    "companyUrl": "",
-    "location": "",
-    "startDate": "2022-01",
-    "endDate": "2023-12",
-    "current": false,
-    "description": [
-      "Participated in data preprocessing, model evaluation, and reporting accuracy for ML-based student projects.",
-      "Organized peer review sessions to improve analytical approaches and data storytelling."
-    ],
-    "technologies": ["Machine Learning", "Data Preprocessing", "Model Evaluation", "Python"]
+    "technologies": [
+      "Cybersecurity",
+      "CTF",
+      "Reverse Engineering",
+      "Data Security"
+    ]
   }
 ]
