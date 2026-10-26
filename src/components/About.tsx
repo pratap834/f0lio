@@ -12,7 +12,7 @@ export default function About() {
     { label: 'Industry Impact', value: 'Enterprise optimization at Titan Co.' },
   ];
 
-  const coreSkills = ['Python', 'PyTorch', 'TensorFlow', 'FastAPI', 'Docker', 'SQL', 'MLOps'];
+  const coreSkills = ['Python', 'PyTorch', 'TensorFlow', 'FastAPI', 'Docker', 'Qdrant', 'SQL', 'MLOps'];
 
   return (
     <section id="about" className="py-20 border-t border-border/50">

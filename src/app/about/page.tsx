@@ -143,7 +143,7 @@ export default function AboutPage() {
                       Toolbox & Frameworks
                     </p>
                     <div className="flex flex-wrap gap-1.5">
-                      {['Python', 'PyTorch', 'TensorFlow', 'FastAPI', 'Docker', 'SQL', 'Vision Transformers', 'MLOps', 'OpenCV', 'Pandas'].map((tech) => (
+                      {['Python', 'PyTorch', 'TensorFlow', 'FastAPI', 'Docker', 'Qdrant', 'Neo4j', 'SQL', 'Vision Transformers', 'MLOps', 'OpenCV', 'Pandas'].map((tech) => (
                         <span
                           key={tech}
                           className="px-2 py-0.5 text-xs rounded bg-surface border border-border text-text-secondary font-mono"

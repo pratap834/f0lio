@@ -6,8 +6,9 @@ import { Project } from '@/types';
 export const revalidate = 3600; // Revalidate every hour
 
 export async function GET() {
+  const manualProjects = manualProjectsData as unknown as Project[];
+
   try {
-    const manualProjects = manualProjectsData as unknown as Project[];
     const projects = await getAllProjects(manualProjects);
     
     return NextResponse.json({ 
@@ -16,10 +17,12 @@ export async function GET() {
       count: projects.length,
     });
   } catch (error) {
-    console.error('Error in projects API:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch projects' },
-      { status: 500 }
-    );
+    console.warn('Error in projects API, returning manual projects fallback:', error);
+    return NextResponse.json({
+      projects: manualProjects,
+      lastUpdated: new Date().toISOString(),
+      count: manualProjects.length,
+      fallback: true,
+    });
   }
 }

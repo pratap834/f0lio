@@ -24,6 +24,67 @@
     "accessNote": "If you want to access it, share an email to pratapsubramani@gmail.com or DM me."
   },
   {
+    "id": "company-rag",
+    "title": "CompanyRAG — Multimodal Knowledge & RAG Platform",
+    "description": "Multi-tenant RAG platform featuring layered document ingestion (DOCX, OCR-supported PDF, PPTX), dense multilingual vector search, and selective Neo4j graph traversal.",
+    "longDescription": "A multimodal Retrieval-Augmented Generation system engineered for enterprise document processing. Ingestion handles structured DOCX, page-by-page conditional OCR for scanned PDFs, PPTX slide decomposition, and tabular data with schema summarization. Retrieval pairs dense multilingual embeddings (BGE-M3 / E5) in Qdrant with selective entity-relationship traversal in Neo4j. Includes multi-tenant data isolation, a 6-tier deterministic precedence hierarchy for version updates, and a pre-generation confidence gate to eliminate ungrounded answers.",
+    "thumbnail": "/images/projects/company-rag.jpg",
+    "tech": ["Python 3.11", "FastAPI", "Next.js 14", "Qdrant", "Neo4j", "PostgreSQL", "BGE-M3", "Docker", "Pytest"],
+    "github": "https://github.com/pratap834/CompanyRAG",
+    "category": "AI & Systems",
+    "keyFeatures": [
+      "Layered multi-format parsing with conditional page-by-page OCR",
+      "Hybrid retrieval combining dense vector search (Qdrant) and graph traversal (Neo4j)",
+      "Tenant isolation with PUBLIC, INTERNAL, and ADMIN_ONLY access scopes",
+      "Deterministic 6-tier conflict resolution for active document versions",
+      "Retrieval confidence check to prevent hallucinations on out-of-scope queries",
+      "Sub-50ms retrieval benchmarks validated with automated Pytest suites"
+    ],
+    "tags": ["RAG", "FastAPI", "Qdrant", "Neo4j", "Docker", "Multimodal"],
+    "status": "Completed",
+    "featured": true
+  },
+  {
+    "id": "n0tes",
+    "title": "n0tes — Minimal Electronic Notepad",
+    "description": "A distraction-free sectional notepad with vintage stationery styling, debounced autosave, and serverless PostgreSQL persistence on the edge.",
+    "longDescription": "An authentic, sectional notebook web application designed around classic desk stationery and Manila folder aesthetics. Features categorized folder tabs, instant in-section search, debounced autosave, print-optimized stylesheets, and plain-text export. Built with Next.js and @neondatabase/serverless for instant cold starts on Vercel Edge, backed by a local storage fallback layer for uninterrupted offline note-taking.",
+    "thumbnail": "/images/projects/n0tes.jpg",
+    "tech": ["Next.js", "TypeScript", "Tailwind CSS", "NeonDB", "PostgreSQL", "Vercel Edge"],
+    "github": "https://github.com/pratap834/n0tes",
+    "category": "Web Platforms",
+    "keyFeatures": [
+      "Sectional folder tab organization with custom category creation",
+      "Debounced real-time autosave with sub-second serverless persistence",
+      "Built with @neondatabase/serverless for instant edge cold starts on Vercel",
+      "Resilient local storage fallback for offline note-taking",
+      "Print-optimized stylesheets and clean plain-text export"
+    ],
+    "tags": ["Next.js", "NeonDB", "Serverless", "TypeScript", "PostgreSQL"],
+    "status": "Completed",
+    "featured": true
+  },
+  {
+    "id": "titanian",
+    "title": "Titanian — Terminal Client for Titan AI Gateway",
+    "description": "A lightweight terminal CLI client connecting to the Titan AI Gateway with chunked HTTP streaming, persistent session history, and explicit file permissions.",
+    "longDescription": "A minimal, installable Python command-line interface (titanian) for communicating with the Titan AI Gateway directly from the terminal. Features real-time token streaming, multi-line prompt editing, rich session history persisted via JSON Lines (JSONL), and an explicit file-permission security module that prompts before reading local files. Designed with minimal dependencies for smooth execution across PowerShell and POSIX terminals.",
+    "thumbnail": "/images/projects/titanian.jpg",
+    "tech": ["Python", "CLI / REPL", "HTTP Streaming", "Titan AI Gateway", "JSONL", "PowerShell"],
+    "github": "https://github.com/pratap834/Titanian",
+    "category": "DevTools & Systems",
+    "keyFeatures": [
+      "Standard pyproject packaging with installable system command (titanian)",
+      "Chunked HTTP response streaming with interactive multi-line terminal input",
+      "Explicit runtime file-read permission checks for secure operations",
+      "Session context persistence using structured JSON Lines (JSONL)",
+      "Low-dependency design tested on Windows PowerShell and bash environments"
+    ],
+    "tags": ["Python", "CLI", "AI Gateway", "DevTools", "Streaming"],
+    "status": "Completed",
+    "featured": true
+  },
+  {
     "id": "vitap-marketplace",
     "title": "VIT-AP Student Marketplace Platform",
     "description": "Marketplace web application enabling VIT-AP students to buy, sell, and trade items within the campus community with real-time messaging capabilities",

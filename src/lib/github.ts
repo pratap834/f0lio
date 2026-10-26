@@ -27,6 +27,9 @@ export interface GitHubRepo {
 }
 
 export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+
   try {
     const headers: HeadersInit = {
       'Accept': 'application/vnd.github+json',
@@ -43,15 +46,14 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
       `${GITHUB_API}/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100&type=public&affiliation=owner`,
       {
         headers,
+        signal: controller.signal,
         next: { revalidate: 3600 }, // Revalidate every hour
       }
     );
 
     if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`GitHub API error: ${response.status} ${response.statusText}`);
-      console.error(`Error details: ${errorText}`);
-      throw new Error(`GitHub API error: ${response.status}`);
+      console.warn(`GitHub API responded with status ${response.status} ${response.statusText}. Using fallback.`);
+      return [];
     }
 
     const repos: GitHubRepo[] = await response.json();
@@ -62,8 +64,10 @@ export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
       !EXCLUDED_REPOS.includes(repo.name.toLowerCase())
     );
   } catch (error) {
-    console.error('Error fetching GitHub repos:', error);
+    console.warn('GitHub API fetch failed or timed out (offline or unreachable). Using local projects fallback.');
     return [];
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
@@ -95,19 +99,24 @@ export function convertGitHubRepoToProject(repo: GitHubRepo): Project {
 }
 
 export async function getAllProjects(manualProjects: Project[]): Promise<Project[]> {
-  const githubRepos = await fetchGitHubRepos();
-  const githubProjects = githubRepos.map(convertGitHubRepoToProject);
-  
-  // Get GitHub URLs from manual projects to avoid duplicates
-  const manualGithubUrls = new Set(
-    manualProjects.map(p => p.github).filter(Boolean)
-  );
-  
-  // Filter out GitHub projects that are already in manual projects
-  const uniqueGithubProjects = githubProjects.filter(
-    gp => !manualGithubUrls.has(gp.github)
-  );
-  
-  // Return manual projects first (higher priority), then GitHub projects
-  return [...manualProjects, ...uniqueGithubProjects];
+  try {
+    const githubRepos = await fetchGitHubRepos();
+    const githubProjects = githubRepos.map(convertGitHubRepoToProject);
+    
+    // Get GitHub URLs from manual projects to avoid duplicates
+    const manualGithubUrls = new Set(
+      manualProjects.map(p => p.github).filter(Boolean)
+    );
+    
+    // Filter out GitHub projects that are already in manual projects
+    const uniqueGithubProjects = githubProjects.filter(
+      gp => !manualGithubUrls.has(gp.github)
+    );
+    
+    // Return manual projects first (higher priority), then GitHub projects
+    return [...manualProjects, ...uniqueGithubProjects];
+  } catch (error) {
+    console.warn('Error in getAllProjects, returning manual projects fallback:', error);
+    return manualProjects;
+  }
 }
