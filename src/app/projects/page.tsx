@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
-import N8nShowcase from '@/components/N8nShowcase';
 import { Project } from '@/types';
 import ScrollIndicator from '@/components/ui/ScrollIndicator';
 
@@ -76,9 +75,6 @@ export default function ProjectsPage() {
             Auto-synced with GitHub · Cached hourly
           </p>
         </motion.div>
-
-        {/* Self-Hosted n8n Showcase Section */}
-        <N8nShowcase />
 
         {/* Filter Buttons & Count */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pt-4 border-t border-border">
