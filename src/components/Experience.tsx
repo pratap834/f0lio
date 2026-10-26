@@ -88,7 +88,7 @@ export default function Experience() {
             href="/experience"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-md border border-border bg-surface text-text-primary text-sm font-medium hover:bg-surface-hover hover:border-[#404040] transition-colors"
           >
-            View Full Experience →
+            View Full Experience
           </Link>
         </motion.div>
       </div>

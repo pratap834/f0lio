@@ -80,7 +80,7 @@ export default function Projects() {
             href="/projects"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-text-primary text-background font-medium hover:bg-white transition-colors duration-200 text-sm"
           >
-            View All Projects →
+            View All Projects
           </Link>
         </motion.div>
       </div>

@@ -48,7 +48,7 @@ export default function HeroOverlay() {
             className="px-5 py-2.5 rounded-md text-sm font-medium bg-surface text-text-primary border border-border hover:bg-surface-hover hover:border-[#383838] transition-colors inline-flex items-center gap-1.5"
           >
             View Resume
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true"></span>
           </a>
         </div>
       </motion.div>

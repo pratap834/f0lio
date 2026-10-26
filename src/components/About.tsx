@@ -60,7 +60,7 @@ export default function About() {
                 href="/about"
                 className="px-4 py-2 rounded-md border border-border bg-surface-hover text-text-primary hover:border-[#404040] text-sm font-medium transition-colors"
               >
-                Learn More About Me →
+                Learn More About Me
               </Link>
               <Link
                 href="/projects"
