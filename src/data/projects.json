@@ -51,6 +51,8 @@
     "longDescription": "An authentic, sectional notebook web application designed around classic desk stationery and Manila folder aesthetics. Features categorized folder tabs, instant in-section search, debounced autosave, print-optimized stylesheets, and plain-text export. Built with Next.js and @neondatabase/serverless for instant cold starts on Vercel Edge, backed by a local storage fallback layer for uninterrupted offline note-taking.",
     "thumbnail": "/images/projects/n0tes.jpg",
     "tech": ["Next.js", "TypeScript", "Tailwind CSS", "NeonDB", "PostgreSQL", "Vercel Edge"],
+    "link": "https://n0tepad.prataps.dev",
+    "demo": "https://n0tepad.prataps.dev",
     "github": "https://github.com/pratap834/n0tes",
     "category": "Web Platforms",
     "keyFeatures": [
